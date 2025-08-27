@@ -19,14 +19,15 @@ async function getArticles() {
 }
 
 function displayArticles(articles) {
+  const div = document.querySelector('.articles')
   const titleArticle = document.createElement('h3')
-  titleArticle.innerText = articles.titleArticle
+  titleArticle.textContent = "Titre de l'actualité"
   const descriptionArticle = document.createElement('p')
-  descriptionArticle.innerText = articles.descriptionArticle
+  descriptionArticle.textContent = "Description de l'actualité"
   const contentArticle = document.createElement('p')
-  contentArticle.innerText = articles.contentArticle
+  contentArticle.textContent = "Contenu de l'actualité"
   const publicationDateArticle = document.createElement('p')
-  publicationDateArticle.innerText = articles.publicationDateArticle 
+  publicationDateArticle.textContent = "Date de publication"
 
   const divArticles = document.querySelector(".articles")
   divArticles.appendChild(titleArticle)
