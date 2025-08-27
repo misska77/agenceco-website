@@ -19,18 +19,35 @@ async function getArticles() {
 }
 
 function displayArticles(articles) {
-  console.log(articles);
-  /*faire affichage des articles dans le html(tarte aux pommes)*/
+  const titleArticle = document.createElement('h3')
+  titleArticle.innerText = articles.titleArticle
+  const descriptionArticle = document.createElement('p')
+  descriptionArticle.innerText = articles.descriptionArticle
+  const contentArticle = document.createElement('p')
+  contentArticle.innerText = articles.contentArticle
+  const publicationDateArticle = document.createElement('p')
+  publicationDateArticle.innerText = articles.publicationDateArticle 
+
+  const divArticles = document.querySelector(".articles")
+  divArticles.appendChild(titleArticle)
+  divArticles.appendChild(descriptionArticle)
+  divArticles.appendChild(contentArticle)
+  divArticles.appendChild(publicationDateArticle)
 }
 
 async function main() {
+  try {
   let articles = await getArticles();
+  console.log(articles)
   displayArticles(articles);
+} catch {
+  console.log("erreur fichier json")
+}
 }
 
 main();
 
-/*<div class="bloc-actualite">
+/*<div class="articles">
           <h3>Le titre de mon actualité</h3>
           <p class="date">05/04/2023</p>
           <p>La description de l'actualité</p>

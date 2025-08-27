@@ -214,28 +214,23 @@ p {
   flex-direction: column;
   justify-content: center;
   text-align: center;
-  gap: 15px;
-  width: 100%;
-  padding: 30px 80px;
-}
-
-.bloc-actualite {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
   align-items: center;
   background-color: #469b61;
   border-radius: 10px;
+  gap: 15px;
+  width: 90%;
+  padding: 30px 80px;
+  margin-bottom: 20px;
 }
 
-.bloc-actualite h3 {
+.conteneur-actualite h3 {
   color: white;
   font-size: 1.8em;
   font-weight: 500;
   padding-top: 20px;
 }
 
-.bloc-actualite p {
+.conteneur-actualite p {
   font-size: 1.3em;
   font-weight: 400;
   color: white;
