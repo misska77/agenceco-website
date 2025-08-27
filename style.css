@@ -218,9 +218,8 @@ p {
   background-color: #469b61;
   border-radius: 10px;
   gap: 15px;
-  width: 90%;
-  padding: 30px 80px;
-  margin-bottom: 20px;
+  padding: 30px;
+  margin: 20px 100px;
 }
 
 .conteneur-actualite h3 {
@@ -750,7 +749,7 @@ footer div {
   }
 
   .conteneur-actualite {
-    padding: 0 30px 30px 30px;
+    margin: 20px;
   }
 
   .bloc-actualite {
@@ -781,21 +780,9 @@ footer div {
     width: 80%;
     padding-bottom: 0px;
   }
-  .coordonnees div input {
-    width: 80%;
-  }
-
-  .champs-message {
-    width: 80%;
-  }
-
-  .adresse-mail div {
-    width: 80%;
-  }
-
-  .champs-message div {
-    width: 80%;
-  }
+#nom, #categorie, #telephone, #ville, #email, #message {
+  width: 80%;
+}
 
   .bouton-envoyer input {
     width: 150px;
