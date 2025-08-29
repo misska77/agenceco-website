@@ -19,32 +19,32 @@ async function getArticles() {
 }
 
 function displayArticles(articles) {
-  
-  /*const div = document.querySelector('.articles')
-  const titleArticle = document.createElement('h3')
-  titleArticle.textContent = "Titre de l'actualité"
-  const descriptionArticle = document.createElement('p')
-  descriptionArticle.textContent = "Description de l'actualité"
-  const contentArticle = document.createElement('p')
-  contentArticle.textContent = "Contenu de l'actualité"
-  const publicationDateArticle = document.createElement('p')
-  publicationDateArticle.textContent = "Date de publication"
+  const ficheArticles = articles[0]
+  const titleElement = document.createElement("h3")
+  titleElement.innerText = articles.title
+  const descriptionElement = document.createElement("p")
+  descriptionElement.innerText = articles.description
+  const contentElement = document.createElement("p")
+  contentElement.innerText = articles.content
+  const publicationDateElement = document.createElement("p")
+  publicationDateElement.innerText = articles.publicationdate
 
-  const divArticles = document.querySelector(".articles")
-  divArticles.appendChild(titleArticle)
-  divArticles.appendChild(descriptionArticle)
-  divArticles.appendChild(contentArticle)
-  divArticles.appendChild(publicationDateArticle)*/
+  const divActualites = document.querySelector(".actualites")
+  divActualites.appendChild(articles.title)
+  divActualites.appendChild(articles.description)
+  divActualites.appendChild(articles.content)
+  divActualites.appendChild(articles.publicationdate)
 }
+
 
 async function main() {
   try {
-  let articles = await getArticles();
-  console.log(articles)
-  displayArticles(articles);
-} catch {
-  console.log("erreur fichier json")
-}
+    let articles = await getArticles();
+    console.log(articles)
+    displayArticles(articles);
+  } catch {
+    console.log("erreur fichier json")
+  }
 }
 
 main();

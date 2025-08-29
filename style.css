@@ -209,7 +209,7 @@ p {
   padding: 10px 0px;
 }
 
-.conteneur-actualite {
+.actualites {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -222,14 +222,14 @@ p {
   margin: 20px 100px;
 }
 
-.conteneur-actualite h3 {
+.actualites h3 {
   color: white;
   font-size: 1.8em;
   font-weight: 500;
   padding: 20px 0;
 }
 
-.conteneur-actualite p {
+.actualites p {
   font-size: 1.3em;
   font-weight: 400;
   color: white;
@@ -748,19 +748,15 @@ footer div {
     font-size: 1.3em;
   }
 
-  .conteneur-actualite {
+  .actualites {
     margin: 20px;
   }
 
-  .bloc-actualite {
-    padding: 5px;
-  }
-
-  .bloc-actualite h3 {
+  .actualites h3 {
     font-size: 1.6em;
   }
 
-  .bloc-actualite p {
+  .actualites p {
     padding: 15px;
   }
 
