@@ -19,7 +19,8 @@ async function getArticles() {
 }
 
 function displayArticles(articles) {
-  const div = document.querySelector('.articles')
+  
+  /*const div = document.querySelector('.articles')
   const titleArticle = document.createElement('h3')
   titleArticle.textContent = "Titre de l'actualité"
   const descriptionArticle = document.createElement('p')
@@ -33,7 +34,7 @@ function displayArticles(articles) {
   divArticles.appendChild(titleArticle)
   divArticles.appendChild(descriptionArticle)
   divArticles.appendChild(contentArticle)
-  divArticles.appendChild(publicationDateArticle)
+  divArticles.appendChild(publicationDateArticle)*/
 }
 
 async function main() {
