@@ -18,29 +18,35 @@ async function getArticles() {
   return articles;
 }
 
-function displayArticles(articles) {
-  const ficheArticles = articles[0]
-  const titleElement = document.createElement("h3")
-  titleElement.innerText = articles.title
-  const descriptionElement = document.createElement("p")
-  descriptionElement.innerText = articles.description
-  const contentElement = document.createElement("p")
-  contentElement.innerText = articles.content
-  const publicationDateElement = document.createElement("p")
-  publicationDateElement.innerText = articles.publicationdate
+function afficherArticles(articles) {
+  for (let i = 0; i < articles.length; i++) {
+    const ficheActualites = articles[i]
 
-  const divActualites = document.querySelector(".actualites")
-  divActualites.appendChild(titleElement)
-  divActualites.appendChild(descriptionElement)
-  divActualites.appendChild(contentElement)
-  divActualites.appendChild(publicationDateElement)
+    const titleElement = document.createElement("h3")
+    titleElement.innerText = articles.title
+
+    const descriptionElement = document.createElement("p")
+    descriptionElement.innerText = articles.description
+
+    const contentElement = document.createElement("p")
+    contentElement.innerText = articles.content
+
+    const publicationDateElement = document.createElement("p")
+    publicationDateElement.innerText = articles.publicationdate
+
+    const divActualites = document.querySelector(".actualites")
+    divActualites.appendChild(titleElement)
+    divActualites.appendChild(descriptionElement)
+    divActualites.appendChild(contentElement)
+    divActualites.appendChild(publicationDateElement)
+  }
 }
 
 async function main() {
   try {
     let articles = await getArticles();
     console.log(articles)
-    displayArticles(articles);
+    afficherArticles(articles);
   } catch {
     console.log("erreur fichier json")
   }
