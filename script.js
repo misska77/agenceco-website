@@ -19,26 +19,25 @@ async function getArticles() {
 }
 
 function afficherArticles(articles) {
-  for (let i = 0; i < articles.length; i++) {
-    const ficheActualites = articles[i]
+  const divArticles = document.querySelector(".articles")
 
-    const titleElement = document.createElement("h3")
-    titleElement.innerText = articles.title
+  for (let article of articles) {
+    const title = document.createElement("h3")
+    title.textContent = "Titre de l'actualité"
 
-    const descriptionElement = document.createElement("p")
-    descriptionElement.innerText = articles.description
+    const description = document.createElement("p")
+    description.textContent = "Description de l'article"
 
-    const contentElement = document.createElement("p")
-    contentElement.innerText = articles.content
+    const content = document.createElement("p")
+    content.textContent = "Contenu de l'article"
 
-    const publicationDateElement = document.createElement("p")
-    publicationDateElement.innerText = articles.publicationdate
+    const publicationDate = document.createElement("p")
+    publicationDate.textContent = "Date de publication"
 
-    const divActualites = document.querySelector(".actualites")
-    divActualites.appendChild(titleElement)
-    divActualites.appendChild(descriptionElement)
-    divActualites.appendChild(contentElement)
-    divActualites.appendChild(publicationDateElement)
+    divArticles.appendChild(Title)
+    divArticles.appendChild(description)
+    divArticles.appendChild(content)
+    divArticles.appendChild(publicationDate)
   }
 }
 

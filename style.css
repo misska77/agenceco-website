@@ -209,7 +209,7 @@ p {
   padding: 10px 0px;
 }
 
-.actualites {
+.articles {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -222,14 +222,14 @@ p {
   margin: 20px 100px;
 }
 
-.actualites h3 {
+.articles h3 {
   color: white;
   font-size: 1.8em;
   font-weight: 500;
   padding: 20px 0;
 }
 
-.actualites p {
+.articles p {
   font-size: 1.3em;
   font-weight: 400;
   color: white;
@@ -748,15 +748,15 @@ footer div {
     font-size: 1.3em;
   }
 
-  .actualites {
+  .articles {
     margin: 20px;
   }
 
-  .actualites h3 {
+  .articles h3 {
     font-size: 1.6em;
   }
 
-  .actualites p {
+  .articles p {
     padding: 15px;
   }
 
