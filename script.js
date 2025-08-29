@@ -14,48 +14,50 @@ btnToggle.onclick = function () {
 
 async function getArticles() {
   let response = await fetch("http://localhost:3000/articles");
-  let articles = await response.json();
-  return articles;
+  let listeArticles = await response.json();
+  return listeArticles;
 }
 
-function afficherArticles(articles) {
-  const divArticles = document.querySelector(".articles")
 
-  for (let article of articles) {
+function afficherArticles(listeArticles) {
+  const divConteneurActualites = document.querySelector('.conteneurActualites')
+  console.log("afficherArticles")
+  /* ici trier le tableau listeArticles*/
+  
+  for (let i = 0; i < listeArticles.length && i < 3; i++) {
+    const article = listeArticles[i]
+    const divFicheArticle = document.createElement('div')
+    divFicheArticle.classList.add("ficheArticle")
+
     const title = document.createElement("h3")
-    title.textContent = "Titre de l'actualité"
+    title.textContent = article.title
 
     const description = document.createElement("p")
-    description.textContent = "Description de l'article"
+    description.textContent = article.description
 
     const content = document.createElement("p")
-    content.textContent = "Contenu de l'article"
+    content.textContent = article.content
 
     const publicationDate = document.createElement("p")
-    publicationDate.textContent = "Date de publication"
-
-    divArticles.appendChild(Title)
-    divArticles.appendChild(description)
-    divArticles.appendChild(content)
-    divArticles.appendChild(publicationDate)
+    publicationDate.textContent = article.publicationDate
+    
+    divConteneurActualites.appendChild(divFicheArticle)
+    divFicheArticle.appendChild(title)
+    divFicheArticle.appendChild(description)
+    divFicheArticle.appendChild(content)
+    divFicheArticle.appendChild(publicationDate)
+    
   }
 }
 
 async function main() {
   try {
-    let articles = await getArticles();
-    console.log(articles)
-    afficherArticles(articles);
-  } catch {
-    console.log("erreur fichier json")
+    let listeArticles = await getArticles();
+    console.log(listeArticles)
+    afficherArticles(listeArticles);
+  } catch (error) {
+    console.log("erreur fichier json", error)
   }
 }
 
 main();
-
-/*<div class="articles">
-          <h3>Le titre de mon actualité</h3>
-          <p class="date">05/04/2023</p>
-          <p>La description de l'actualité</p>
-          <p>Le contenu de l'actualité</p>
-        </div>*/

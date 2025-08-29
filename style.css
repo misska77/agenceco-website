@@ -209,7 +209,21 @@ p {
   padding: 10px 0px;
 }
 
-.articles {
+#conteneur-nos-actualites {
+  display: flex ;
+  flex-direction: column;
+  align-items: center;
+}
+.conteneurActualites {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  gap: 15px;
+}
+
+.ficheArticle {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -217,19 +231,19 @@ p {
   align-items: center;
   background-color: #469b61;
   border-radius: 10px;
-  gap: 15px;
+  width: 100%;
   padding: 30px;
-  margin: 20px 100px;
+
 }
 
-.articles h3 {
+.ficheArticle h3 {
   color: white;
   font-size: 1.8em;
   font-weight: 500;
   padding: 20px 0;
 }
 
-.articles p {
+.ficheArticle p {
   font-size: 1.3em;
   font-weight: 400;
   color: white;
@@ -748,15 +762,15 @@ footer div {
     font-size: 1.3em;
   }
 
-  .articles {
+  .ficheArticle {
     margin: 20px;
   }
 
-  .articles h3 {
+  .ficheArticle h3 {
     font-size: 1.6em;
   }
 
-  .articles p {
+  .ficheArticle p {
     padding: 15px;
   }
 
@@ -776,9 +790,15 @@ footer div {
     width: 80%;
     padding-bottom: 0px;
   }
-#nom, #categorie, #telephone, #ville, #email, #message {
-  width: 80%;
-}
+
+  #nom,
+  #categorie,
+  #telephone,
+  #ville,
+  #email,
+  #message {
+    width: 80%;
+  }
 
   .bouton-envoyer input {
     width: 150px;
