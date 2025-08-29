@@ -30,12 +30,11 @@ function displayArticles(articles) {
   publicationDateElement.innerText = articles.publicationdate
 
   const divActualites = document.querySelector(".actualites")
-  divActualites.appendChild(articles.title)
-  divActualites.appendChild(articles.description)
-  divActualites.appendChild(articles.content)
-  divActualites.appendChild(articles.publicationdate)
+  divActualites.appendChild(titleElement)
+  divActualites.appendChild(descriptionElement)
+  divActualites.appendChild(contentElement)
+  divActualites.appendChild(publicationDateElement)
 }
-
 
 async function main() {
   try {
