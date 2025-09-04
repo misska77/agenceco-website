@@ -69,58 +69,60 @@ h2 {
   margin-bottom: 20px;
 }
 
-.conteneur-nos-actualites {
-    display:flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width:100%;
-}
-
-.ajout-actualite {
+#newslist {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 350px;
-  height: 60px;
-  border-radius: 10px 10px 10px 10px;
-  background-color: #c8ff00;
-  border: none;
-  font-size: 2em;
-  font-weight: 500;
 }
 
-#news-list {
+#conteneur-nos-actualites {
+  display: flex ;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 30px;
+}
+
+.conteneurActualites {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 100%;
-}
-
-.details-actualites {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  background-color:#469b61;
-  color: white;
-  margin:30px;
-  width: 80%;
+  width: 85%;
   gap: 15px;
 }
 
-h3 {
-  font-size: 1.8em;
-  font-weight: 400;
-  text-align: left;
-}
-
-p  {
+.ficheArticle {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   text-align: center;
+  align-items: center;
+  background-color: #469b61;
+  border-radius: 10px;
+  width: 100%;
+  padding: 30px;
+
 }
 
-.date-publication {
-  text-align: left;
+.ficheArticle h3 {
+  color: white;
+  font-size: 1.8em;
+  font-weight: 500;
+  padding: 20px 0;
+}
+
+.ficheArticle p {
+  font-size: 1.3em;
+  font-weight: 400;
+  color: white;
+  padding-bottom: 25px;
+}
+
+.date {
+  font-size: 1.3em;
+  padding-top: 20px;
+  color: white;
 }
 
 .bandeau-pied {
@@ -285,6 +287,18 @@ footer div {
   .nav-links a {
     font-size: 1.8em;
     font-weight: 600;
+  }
+
+  .ficheArticle {
+    margin: 20px;
+  }
+
+  .ficheArticle h3 {
+    font-size: 1.6em;
+  }
+
+  .ficheArticle p {
+    padding: 15px;
   }
 
   .bandeau-pied {
