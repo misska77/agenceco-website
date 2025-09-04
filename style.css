@@ -213,13 +213,15 @@ p {
   display: flex ;
   flex-direction: column;
   align-items: center;
+  margin: 30px;
 }
+
 .conteneurActualites {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 80%;
+  width: 85%;
   gap: 15px;
 }
 

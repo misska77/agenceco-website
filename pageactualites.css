@@ -68,11 +68,13 @@ h2 {
   margin-top: 30px;
   margin-bottom: 20px;
 }
+
 .conteneur-nos-actualites {
     display:flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    width:100%;
 }
 
 .ajout-actualite {
@@ -88,15 +90,37 @@ h2 {
   font-weight: 500;
 }
 
-.conteneur-actualites {
+#news-list {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  width: 100%;
+}
+
+.details-actualites {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   background-color:#469b61;
-  margin: 0 30px;
+  color: white;
+  margin:30px;
   width: 80%;
   gap: 15px;
+}
+
+h3 {
+  font-size: 1.8em;
+  font-weight: 400;
+  text-align: left;
+}
+
+p  {
+  text-align: center;
+}
+
+.date-publication {
+  text-align: left;
 }
 
 .bandeau-pied {
@@ -321,3 +345,4 @@ footer div {
     top: 135px;
     margin: 0px;
   }
+}
