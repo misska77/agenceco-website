@@ -69,19 +69,20 @@ h2 {
   margin-bottom: 20px;
 }
 
-#newslist {
+#news-list {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 100%;
+  margin: 30px;
 }
 
 .conteneurActualites {
   display: flex;
   flex-direction: column;
-  width: 85%;
-  gap: 15px;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
 }
 
 .ficheArticle {
@@ -92,7 +93,7 @@ h2 {
   align-items: center;
   background-color: #469b61;
   border-radius: 10px;
-  width: 100%;
+  width: 85%;
   padding: 30px;
 
 }
