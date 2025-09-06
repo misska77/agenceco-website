@@ -491,7 +491,7 @@ form {
 }
 
 .galerieSlides {
-  display: none ;
+  display: none;
 }
 
 .conteneur-galerie p {
@@ -503,13 +503,13 @@ form {
   border-radius: 20px 20px 20px 20px;
 }
 
- .btn-slide {
+.btn-slide {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin: 20px;
   width: 100%;
- }
+}
 
 .prev,
 .next {
@@ -527,7 +527,8 @@ form {
   user-select: none;
 }
 
-.prev:hover, .next:hover {
+.prev:hover,
+.next:hover {
   background-color: black;
   color: #c8ff00;
 }
@@ -853,14 +854,11 @@ footer div {
   }
 
   .galerieSlides {
-    display: flex;
+    display: block;
     justify-content: center;
     align-items: center;
-  }
-
-  .galerieSlides img {
-    width: 85%;
-    margin: 23px;
+    width: 90%;
+    margin-bottom: 10px;
   }
 
   .conteneur-galerie p {
