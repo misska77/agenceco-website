@@ -32,7 +32,7 @@
         <a href="#services">Nos services</a>
         <a href="#temoignages">Témoignages</a>
         <a href="#contact">Contactez nous</a>
-        <a href="blog.html">Actualités</a>
+        <a href="#news-list">Actualités</a>
       </div>
     </nav>
   </header>
@@ -93,10 +93,10 @@
       </div>
     </section>
     <section id="news-list">
-            <h2>Dernières Actualités</h2>
-                <div class="conteneurActualites">
-                </div>
-        </section>
+      <h2>Dernières Actualités</h2>
+      <div class="conteneurActualites">
+      </div>
+    </section>
     <section id="conteneur-contactez-nous">
       <div class="conteneur-contact">
         <h2 id="contact">Contactez-nous</h2>
@@ -171,19 +171,18 @@
         <h2>Notre galerie</h2>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Donec sed leo in nisi vehicula bidendum. Aliquam
           sit amet blandit nisi, sodales molestie.</p>
-        <img src="resources/kevin-bhagat-zNRITe8NPqY-unsplash 1.jpg" alt="photo de bureau">
+        <div class="galerieSlides">
+          <img src="resources/kevin-bhagat-zNRITe8NPqY-unsplash 1.jpg" alt="photo reunion" style="width:100%" id="img1">
+        </div>
+        <div class="galerieSlides">
+          <img src="resources/jason-goodman-Oalh2MojUuk-unsplash 1.jpg" alt="photo de bureau" style="width:100%"
+            id="img2">
+        </div>
+        <div class="btn-slide">
+          <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+          <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        </div>
       </div>
-      <div class="bouton-chevron">
-        <div>
-          <button type="submit" class="bouton-gauche" value="precedent">
-            <i class="fa-solid fa-chevron-left"></i>
-          </button>
-        </div>
-        <div>
-          <button type="submit" class="bouton-droit" value="suivant">
-            <i class="fa-solid fa-chevron-right"></i>
-          </button>
-        </div>
       </div>
       <div class="bandeau-pied">
         <div class="bloc-rubriques">

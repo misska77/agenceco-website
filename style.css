@@ -209,6 +209,15 @@ p {
   padding: 10px 0px;
 }
 
+#newlist {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 30px
+}
+
 .conteneurActualites {
   display: flex;
   flex-direction: column;
@@ -477,6 +486,13 @@ form {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.slide-galerie {
+  display: ;
+  
 }
 
 .conteneur-galerie p {
@@ -484,38 +500,34 @@ form {
 }
 
 .conteneur-galerie img {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 85%;
+  width: 100%;
   border-radius: 20px 20px 20px 20px;
 }
-
-.bouton-chevron {
+ .btn-slide {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 100px;
+  margin: 20px;
   width: 100%;
-}
+ }
 
-.bouton-chevron button {
+.prev,
+.next {
   display: flex;
+  cursor: pointer;
   font-size: 1.5em;
   width: 52px;
   height: 52px;
   border-radius: 50%;
   justify-content: center;
   align-items: center;
-}
-
-.bouton-gauche {
   background-color: transparent;
   border: 1px solid black;
   color: #000;
+  user-select: none;
 }
 
-.bouton-droit {
+.prev:hover, .next:hover {
   background-color: black;
   color: #c8ff00;
 }
@@ -767,7 +779,7 @@ footer div {
   .ficheArticle p {
     padding: 15px;
   }
-  
+
   .conteneur-contact {
     padding-top: 5px;
   }

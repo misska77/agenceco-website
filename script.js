@@ -1,3 +1,4 @@
+// Menu burger
 const menu = document.querySelector(".nav-links");
 const btnToggle = document.querySelector(".toggle");
 const iconToggle = document.querySelector(".fa-bars");
@@ -12,7 +13,31 @@ btnToggle.onclick = function () {
   }
 }
 
+// slide-Galerie
+let slideIndex = 1;
+showSlides(slideIndex);
+
+// controle bouton chevron
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+// Thumbnail image controls
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("galerieSlides");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+
 async function getArticles() {
+  console.log("getArticles")
   let response = await fetch("http://localhost:3000/articles");
   let listeArticles = await response.json();
   return listeArticles;
@@ -50,6 +75,7 @@ function afficherArticles(listeArticles) {
 }
 
 async function main() {
+  console.log("appel de la fonction main")
   try {
     let listeArticles = await getArticles();
     console.log(listeArticles)
@@ -58,3 +84,5 @@ async function main() {
     console.log("erreur fichier json", error)
   }
 }
+
+main()
