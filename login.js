@@ -1,14 +1,32 @@
-function initFormulaire() {
+/*function initFormulaire() {
 }
-initFormulaire()
+initFormulaire()*/
 
 const form = document.querySelector("form")
-const email = document.getElementById("email").value
-const password = document.getElementById("password").value
-form.addEventListener("submit", (event) => {
+form.addEventListener("submit", async function postLogin(event) {
     event.preventDefault()
-})
+    const email = document.getElementById("email").value
+    const password = document.getElementById("password").value
+    try {
+        const response = await fetch("http://localhost:3000/login", {
+            method: "POST",
+            headers: {
+                "accept": "application/json",
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({email,password })
+        })
 
-async function postLogin () {
-    console.log("postLogin")
-}
+        const data = await response.json()
+
+        if (response.ok) {
+            alert("connexion réussie !")
+            console.log(data)
+        } else {
+            alert("Erreur : " +(data.message || "identifiants invalides"))
+        }
+    }catch (error) {
+        console.error("Erreur lors de la requête :", error)
+        alert("Impossible de se connecter au serveur")
+    }
+})
