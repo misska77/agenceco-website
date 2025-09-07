@@ -26,10 +26,10 @@ function showSlides(n) {
   let i;
   let slides = document.getElementsByClassName("galerieSlides");
 
-  if(n > slides.length) { slideIndex = 1 }
-  if(n < 1) {slideIndex = slides.length}
+  if (n > slides.length) { slideIndex = 1 }
+  if (n < 1) { slideIndex = slides.length }
 
-  for(let i = 0; i< slides.length; i++) {
+  for (let i = 0; i < slides.length; i++) {
     slides[i].style.display = "none"
   }
 
@@ -41,14 +41,17 @@ async function getArticles() {
   console.log("getArticles")
   let response = await fetch("http://localhost:3000/articles");
   let listeArticles = await response.json();
-  return listeArticles;
+  if (response.ok === true) {
+    return listeArticles;
+  } 
+  throw new Error('Impossible de contacter le serveur')
 }
 
 function afficherArticles(listeArticles) {
   const divConteneurActualites = document.querySelector('.conteneurActualites')
   console.log("afficherArticles")
   /* ici trier le tableau listeArticles*/
-  
+
   for (let i = 0; i < listeArticles.length && i < 3; i++) {
     const article = listeArticles[i]
     const divFicheArticle = document.createElement('div')
@@ -65,13 +68,13 @@ function afficherArticles(listeArticles) {
 
     const publicationDate = document.createElement("p")
     publicationDate.textContent = article.publicationDate
-    
+
     divConteneurActualites.appendChild(divFicheArticle)
     divFicheArticle.appendChild(title)
     divFicheArticle.appendChild(description)
     divFicheArticle.appendChild(content)
     divFicheArticle.appendChild(publicationDate)
-    
+
   }
 }
 

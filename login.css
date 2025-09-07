@@ -25,7 +25,7 @@ form {
 }
 
 
-input {
+#email, #password {
     display: flex;
     width: 45%;
     height: 60px;
