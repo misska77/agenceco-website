@@ -20,13 +20,14 @@ async function getArticles() {
   let listeArticles = await response.json();
   if (response.ok === true) {
     return listeArticles;
-  } 
+  }
   throw new Error('Impossible de contacter le serveur')
 }
 
 function afficherArticles(listeArticles) {
   const divConteneurActualites = document.querySelector('.conteneurActualites')
   console.log("afficherArticles")
+  /* ici trier le tableau listeArticles*/
 
   for (let i = 0; i < listeArticles.length; i++) {
     const article = listeArticles[i]
@@ -67,3 +68,4 @@ async function main() {
 }
 
 main()
+

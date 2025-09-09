@@ -4,7 +4,7 @@
 <head>
     <meta charset='utf-8'>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>News liste</title>
+    <title>formulaire Article</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -13,8 +13,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
         integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link href="newslist.css" rel="stylesheet">
-    <script src="newslist.js" defer></script>
+    <link href="formarticle.css" rel="stylesheet">
+    <script src="formarticle.js" defer></script>
     <script src=https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js type=text/javascript> </script>
 </head>
 
@@ -39,10 +39,15 @@
     </header>
     <main>
         <section id="newslist">
-            <h2>Nos actualités</h2>
-            <button type="submit" id="btn-ajouter">Ajouter une actualité</button>
-            <div class="conteneurActualites">
-            </div>
+            <h2>Ajouter une actualité</h2>
+            <form class="ficheArticle">
+                <input type="text" name="title-actualite" placeholder="Le titre de mon actualité">
+                <textarea name="description" id="description" rows="3"
+                    placeholder="Sa description"></textarea>
+                <textarea name="contenu" id="contenu" rows="3" placeholder="Son contenu"></textarea>
+                <div class="bouton-sauvegarder">
+                    <input class="bouton" type="submit" value=Sauvegarder>
+            </form>
         </section>
         <div class="bandeau-pied">
             <div class="bloc-rubriques">
