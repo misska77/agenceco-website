@@ -27,12 +27,15 @@ async function getArticles() {
 function afficherArticles(listeArticles) {
   const divConteneurActualites = document.querySelector('.conteneurActualites')
   console.log("afficherArticles")
-  /* ici trier le tableau listeArticles*/
 
   for (let i = 0; i < listeArticles.length; i++) {
     const article = listeArticles[i]
-    const divFicheArticle = document.createElement('div')
-    divFicheArticle.classList.add("ficheArticle")
+
+    /*creation du lien pour rendre les actualités cliquable et renvoyer vers une page de détail*/
+    const lien = document.createElement('a')
+    lien.href = 'detail.html?id=${articles.id}'
+    lien.classList.add('ficheArticle')
+    lien.style.display = 'block'
 
     const title = document.createElement("h3")
     title.textContent = article.title
@@ -44,14 +47,16 @@ function afficherArticles(listeArticles) {
     content.textContent = article.content
 
     const publicationDate = document.createElement("p")
+
     publicationDate.classList.add("date")
     publicationDate.textContent = article.publicationDate
 
-    divConteneurActualites.appendChild(divFicheArticle)
-    divFicheArticle.appendChild(title)
-    divFicheArticle.appendChild(description)
-    divFicheArticle.appendChild(content)
-    divFicheArticle.appendChild(publicationDate)
+    lien.appendChild(title)
+    lien.appendChild(description)
+    lien.appendChild(content)
+    lien.appendChild(publicationDate)
+
+    divConteneurActualites.appendChild(lien)
 
   }
 }
