@@ -50,9 +50,9 @@ async function getArticles() {
 function afficherArticles(listeArticles) {
   const divConteneurActualites = document.querySelector('.conteneurActualites')
   console.log("afficherArticles")
-  /* ici trier le tableau listeArticles*/
+  
 
-  for (let i = 0; i < listeArticles.length && i < 3; i++) {
+  for (let i = 0; i < listeArticles.length; i++) {
     const article = listeArticles[i]
     const divFicheArticle = document.createElement('div')
     divFicheArticle.classList.add("ficheArticle")
@@ -80,14 +80,22 @@ function afficherArticles(listeArticles) {
 }
 
 async function main() {
-  console.log("appel de la fonction main")
+  console.log("appel de la fonction main");
   try {
     let listeArticles = await getArticles();
-    console.log(listeArticles)
+    console.log(listeArticles);
+
+    // tri des articles par date décroissante
+    listeArticles.sort((a, b) => new Date(b.publicationDate) - new Date(a.publicationDate));
+
+    // Ne garder que les 3 premiers
+    listeArticles = listeArticles.slice(0, 3);
+
+    // Afficher seulement ces 3 articles
     afficherArticles(listeArticles);
   } catch (error) {
-    console.log("erreur fichier json", error)
+    console.log("erreur fichier json", error);
   }
 }
 
-main()
+main();
