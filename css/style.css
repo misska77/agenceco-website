@@ -237,6 +237,7 @@ p {
   border-radius: 10px;
   width: 85%;
   padding: 30px;
+  gap: 20px;
 }
 
 .ficheArticle h3 {
