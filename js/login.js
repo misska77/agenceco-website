@@ -35,8 +35,9 @@ form.addEventListener("submit", async function postLogin(event) {
         const data = await response.json()
 
         if (response.ok) {
-            alert("connexion réussie !")
-            console.log(data)
+            console.log(data.token)
+            localStorage.setItem("token", data.token)/*stocker le token dans localstorage*/
+            window.location.href = "newslist.html"
         } else {
             alert("Erreur : " +(data.message || "identifiants invalides"))
         }
