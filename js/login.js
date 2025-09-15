@@ -13,10 +13,6 @@ btnToggle.onclick = function () {
   }
 }
 
-/*function initFormulaire() {
-}
-initFormulaire()*/
-
 const form = document.querySelector("form")
 form.addEventListener("submit", async function postLogin(event) {
     event.preventDefault()
@@ -36,7 +32,7 @@ form.addEventListener("submit", async function postLogin(event) {
 
         if (response.ok) {
             console.log(data.token)
-            localStorage.setItem("token", data.token)/*stocker le token dans localstorage*/
+            localStorage.setItem("token", data.token)
             window.location.href = "newslist.html"
         } else {
             alert("Erreur : " +(data.message || "identifiants invalides"))
