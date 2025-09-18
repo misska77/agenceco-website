@@ -282,6 +282,13 @@ form {
   padding-top: 30px;
 }
 
+#nom, #categorie, #telephone, #ville, #email {
+  color: white;
+  font-size: 1.5em;
+  padding-left: 10px;
+} 
+
+
 .coordonnees {
   display: flex;
   justify-content: center;
@@ -362,7 +369,6 @@ form {
 .champs-message label {
   text-align: left;
   width: 100px;
-  font-size: 1.2em;
   padding-right: 20px;
   border-bottom: 4px solid white;
   padding-bottom: 10px;
@@ -372,6 +378,8 @@ form {
   display: flex;
   width: 950px;
   background-color: #183a43;
+  color: white;
+  font-size: 2em;
   border-top: none;
   border-left: none;
   border-right: none;
@@ -617,15 +625,16 @@ footer p {
   color: white;
 }
 
-.bouton-contact {
+.btn-connexion {
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: #c8ff00;
+  color: #000;
   border-radius: 10px;
   border: none;
-  width: 170px;
-  height: 40px;
+  width: 200px;
+  height: 50px;
   font-size: 1.2em;
   font-weight: 500;
   padding: 5px;
