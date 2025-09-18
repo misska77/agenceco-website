@@ -37,6 +37,7 @@ form.addEventListener("submit", async function postLogin(event) {
         } else {
             alert("Erreur : " +(data.message || "identifiants invalides"))
         }
+        
     }catch (error) {
         console.error("Erreur lors de la requête :", error)
         alert("Impossible de se connecter au serveur")

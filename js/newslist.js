@@ -19,9 +19,8 @@ async function getArticles() {
   let response = await fetch("http://localhost:3000/articles");
   let listeArticles = await response.json();
   if (response.ok === true) {
-    return listeArticles;
+    return listeArticles
   }
-  throw new Error('Impossible de contacter le serveur')
 }
 
 function afficherArticles(listeArticles) {
@@ -51,10 +50,33 @@ function afficherArticles(listeArticles) {
     publicationDate.classList.add("date")
     publicationDate.textContent = article.publicationDate
 
+    // --- Bouton Modifier ---
+    const boutonModifier = document.createElement("button")
+    boutonModifier.textContent = "Modifier"
+    boutonModifier.style.backgroundColor = "orange"
+    boutonModifier.style.marginRight = "10px"
+    boutonModifier.addEventListener("click", () => {
+      window.location.href = `editArticle.html?id=${article.id}`
+    })
+
+    // --- Bouton Supprimer ---
+    const boutonSupprimer = document.createElement("button")
+    boutonSupprimer.textContent = "Supprimer"
+    boutonSupprimer.style.backgroundColor = "red"
+    boutonSupprimer.style.color = "white"
+    boutonSupprimer.addEventListener("click", async () => {
+      if (confirm("Voulez-vous vraiment supprimer cette actualité ?")) {
+        await supprimerArticle(article.id)
+        main() // recharger la liste après suppression
+      }
+    })
+
     lien.appendChild(title)
     lien.appendChild(description)
     lien.appendChild(content)
     lien.appendChild(publicationDate)
+    lien.appendChild(boutonModifier)
+    lien.appendChild(boutonSupprimer)
 
     divConteneurActualites.appendChild(lien)
 
