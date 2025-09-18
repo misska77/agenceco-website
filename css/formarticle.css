@@ -208,10 +208,6 @@ footer p {
     color: white;
 }
 
-.bouton-contact {
-    display: none;
-}
-
 footer div {
     display: flex;
     justify-content: center;

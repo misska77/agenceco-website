@@ -911,10 +911,11 @@ footer div {
     padding: 0px;
   }
 
-  .btn-connexion {
+ .btn-connexion {
     width: 200px;
     height: 30px;
     background-color: #c8ff00;
+    color: white;
     border: none;
     border-radius: 10px;
   }
