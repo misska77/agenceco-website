@@ -94,50 +94,6 @@ p {
     margin-bottom: 30px;
 }
 
-.btn-ajouter {
-    background-color: #c8ff00;
-    border: none;
-    border-radius: 10px;
-    width: 250px;
-    height: 50px;
-}
-
-/*.btn-ajouter {
-  background-color: limegreen;
-  color: white;
-  margin: 10px;
-  padding: 10px 15px;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  font-weight: bold;
-  transition: background-color 0.3s ease;
-}
-
-.btn-ajouter:hover {
-  background-color: green;
-}*/
-
-.btn-modifier {
-    background-color: orange;
-    color: white;
-    font-size: 1.5em;
-    width: 150px;
-    height: 40px;
-    border-radius: 10px;
-    border: none;
-}
-
-.btn-supprimer {
-    background-color: red;
-    color: white;
-    font-size: 1.5em;
-    width: 150px;
-    height: 40px;
-    border-radius: 10px;
-    border: none;
-}
-
 .ficheArticle {
     display: flex;
     flex-direction: column;
