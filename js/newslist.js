@@ -13,7 +13,6 @@ btnToggle.onclick = function () {
   }
 }
 
-// 1. Récupérer les articles
 async function getArticles() {
   const token = localStorage.getItem("token")
   let response = await fetch("http://localhost:3000/articles", {
@@ -26,7 +25,6 @@ async function getArticles() {
   throw new Error(listeArticles.message || "Impossible de contacter le serveur")
 }
 
-// 2. Supprimer un article
 async function supprimerArticle(id) {
   const token = localStorage.getItem("token")
   const response = await fetch(`http://localhost:3000/articles/${id}`, {
@@ -39,7 +37,6 @@ async function supprimerArticle(id) {
   }
 }
 
-// 3. Afficher la liste des articles
 function afficherArticles(listeArticles) {
   const divConteneurActualites = document.querySelector('.conteneurActualites')
   divConteneurActualites.innerHTML = ""
@@ -57,7 +54,6 @@ function afficherArticles(listeArticles) {
     const content = document.createElement("p")
     content.textContent = article.content
 
-    //  Conteneur pour la date + les boutons
     const footer = document.createElement("div")
     footer.classList.add("pied-fiche")
 
@@ -70,7 +66,7 @@ function afficherArticles(listeArticles) {
     boutonModifier.textContent = "Modifier"
     boutonModifier.classList.add("btn-modifier")
     boutonModifier.addEventListener("click", () => {
-      window.location.href = `editArticle.html?id=${article.id}`
+      window.location.href = `formarticle.html?id=${article.id}`
     })
 
     // Bouton Supprimer
@@ -80,16 +76,15 @@ function afficherArticles(listeArticles) {
     boutonSupprimer.addEventListener("click", async () => {
       if (confirm("Voulez-vous vraiment supprimer cette actualité ?")) {
         await supprimerArticle(article.id)
-        main() // recharge la liste
+        main()
       }
     })
 
-    // On met la date + boutons dans le footer
+    
     footer.appendChild(publicationDate)
     footer.appendChild(boutonModifier)
     footer.appendChild(boutonSupprimer)
 
-    // On construit l’article
     divArticle.appendChild(title)
     divArticle.appendChild(description)
     divArticle.appendChild(content)
@@ -99,10 +94,9 @@ function afficherArticles(listeArticles) {
   }
 }
 
-// 4. 👉 Ici ta fonction afficherBoutonAjouter
 function afficherBoutonAjouter() {
   const container = document.querySelector('.conteneurActualites')
-
+  container.innerHTML = ""
   const boutonAjouter = document.createElement("button")
   boutonAjouter.textContent = "Ajouter une actualité"
   boutonAjouter.classList.add("btn-ajouter")
@@ -114,7 +108,6 @@ function afficherBoutonAjouter() {
   container.parentNode.insertBefore(boutonAjouter, container)
 }
 
-// 5. La fonction principale
 async function main() {
   const token = localStorage.getItem("token")
   if (!token) {
@@ -132,6 +125,5 @@ async function main() {
   }
 }
 
-// Lancer au chargement
 main()
 
