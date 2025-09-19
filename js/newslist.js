@@ -13,28 +13,40 @@ btnToggle.onclick = function () {
   }
 }
 
-// Actualité
+// 1. Récupérer les articles
 async function getArticles() {
-  console.log("getArticles")
-  let response = await fetch("http://localhost:3000/articles");
-  let listeArticles = await response.json();
-  if (response.ok === true) {
+  const token = localStorage.getItem("token")
+  let response = await fetch("http://localhost:3000/articles", {
+    headers: { "Authorization": `Bearer ${token}` }
+  })
+  let listeArticles = await response.json()
+  if (response.ok) {
     return listeArticles
+  }
+  throw new Error(listeArticles.message || "Impossible de contacter le serveur")
+}
+
+// 2. Supprimer un article
+async function supprimerArticle(id) {
+  const token = localStorage.getItem("token")
+  const response = await fetch(`http://localhost:3000/articles/${id}`, {
+    method: "DELETE",
+    headers: { "Authorization": `Bearer ${token}` }
+  })
+  if (!response.ok) {
+    const error = await response.json()
+    alert("Erreur suppression : " + (error.message || "inconnue"))
   }
 }
 
+// 3. Afficher la liste des articles
 function afficherArticles(listeArticles) {
   const divConteneurActualites = document.querySelector('.conteneurActualites')
-  console.log("afficherArticles")
+  divConteneurActualites.innerHTML = ""
 
-  for (let i = 0; i < listeArticles.length; i++) {
-    const article = listeArticles[i]
-
-    /*creation du lien pour rendre les actualités cliquable et renvoyer vers une page de détail*/
-    const lien = document.createElement('a')
-    lien.href = 'detail.html?id=${articles.id}'
-    lien.classList.add('ficheArticle')
-    lien.style.display = 'block'
+  for (let article of listeArticles) {
+    const divArticle = document.createElement("div")
+    divArticle.classList.add("ficheArticle")
 
     const title = document.createElement("h3")
     title.textContent = article.title
@@ -45,54 +57,81 @@ function afficherArticles(listeArticles) {
     const content = document.createElement("p")
     content.textContent = article.content
 
-    const publicationDate = document.createElement("p")
+    //  Conteneur pour la date + les boutons
+    const footer = document.createElement("div")
+    footer.classList.add("pied-fiche")
 
+    const publicationDate = document.createElement("p")
     publicationDate.classList.add("date")
     publicationDate.textContent = article.publicationDate
 
-    // --- Bouton Modifier ---
+    // Bouton Modifier
     const boutonModifier = document.createElement("button")
     boutonModifier.textContent = "Modifier"
-    boutonModifier.style.backgroundColor = "orange"
-    boutonModifier.style.marginRight = "10px"
+    boutonModifier.classList.add("btn-modifier")
     boutonModifier.addEventListener("click", () => {
       window.location.href = `editArticle.html?id=${article.id}`
     })
 
-    // --- Bouton Supprimer ---
+    // Bouton Supprimer
     const boutonSupprimer = document.createElement("button")
     boutonSupprimer.textContent = "Supprimer"
-    boutonSupprimer.style.backgroundColor = "red"
-    boutonSupprimer.style.color = "white"
+    boutonSupprimer.classList.add("btn-supprimer")
     boutonSupprimer.addEventListener("click", async () => {
       if (confirm("Voulez-vous vraiment supprimer cette actualité ?")) {
         await supprimerArticle(article.id)
-        main() // recharger la liste après suppression
+        main() // recharge la liste
       }
     })
 
-    lien.appendChild(title)
-    lien.appendChild(description)
-    lien.appendChild(content)
-    lien.appendChild(publicationDate)
-    lien.appendChild(boutonModifier)
-    lien.appendChild(boutonSupprimer)
+    // On met la date + boutons dans le footer
+    footer.appendChild(publicationDate)
+    footer.appendChild(boutonModifier)
+    footer.appendChild(boutonSupprimer)
 
-    divConteneurActualites.appendChild(lien)
+    // On construit l’article
+    divArticle.appendChild(title)
+    divArticle.appendChild(description)
+    divArticle.appendChild(content)
+    divArticle.appendChild(footer)
 
+    divConteneurActualites.appendChild(divArticle)
   }
 }
 
+// 4. 👉 Ici ta fonction afficherBoutonAjouter
+function afficherBoutonAjouter() {
+  const container = document.querySelector('.conteneurActualites')
+
+  const boutonAjouter = document.createElement("button")
+  boutonAjouter.textContent = "Ajouter une actualité"
+  boutonAjouter.classList.add("btn-ajouter")
+
+  boutonAjouter.addEventListener("click", () => {
+    window.location.href = "formarticle.html"
+  })
+
+  container.parentNode.insertBefore(boutonAjouter, container)
+}
+
+// 5. La fonction principale
 async function main() {
-  console.log("appel de la fonction main")
+  const token = localStorage.getItem("token")
+  if (!token) {
+    window.location.href = "login.html"
+    return
+  }
+
   try {
-    let listeArticles = await getArticles();
-    console.log(listeArticles)
-    afficherArticles(listeArticles);
+    afficherBoutonAjouter()
+    let listeArticles = await getArticles()
+    afficherArticles(listeArticles)
   } catch (error) {
-    console.log("erreur fichier json", error)
+    console.error("Erreur :", error)
+    alert("Impossible de charger les articles")
   }
 }
 
+// Lancer au chargement
 main()
 
