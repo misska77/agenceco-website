@@ -13,6 +13,9 @@ btnToggle.onclick = function () {
   }
 }
 
+/*import { ajoutListenerAjoutActualite } from "./formarticle.js";
+ajoutListenerAjoutActualite()*/
+
 async function getArticles() {
   const token = localStorage.getItem("token")
   let response = await fetch("http://localhost:3000/articles", {
@@ -80,7 +83,6 @@ function afficherArticles(listeArticles) {
       }
     })
 
-    
     footer.appendChild(publicationDate)
     footer.appendChild(boutonModifier)
     footer.appendChild(boutonSupprimer)
