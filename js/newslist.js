@@ -12,34 +12,40 @@ btnToggle.onclick = function () {
     menu.classList.toggle("hidden");
   }
 }
-
-/*import { ajoutListenerAjoutActualite } from "./formarticle.js";
-ajoutListenerAjoutActualite()*/
+// récuperation des articles de l'API si Token Validé
 
 async function getArticles() {
+  // recuperation du Token dans le localStorage
   const token = localStorage.getItem("token")
   let response = await fetch("http://localhost:3000/articles", {
     headers: { "Authorization": `Bearer ${token}` }
   })
+  //si token présent dans localStorage - l'utilisateur est connecté au serveur - l'API retourne la liste des articles
   let listeArticles = await response.json()
   if (response.ok) {
     return listeArticles
   }
+
   throw new Error(listeArticles.message || "Impossible de contacter le serveur")
 }
 
+  // gestion du bouton supprimer un article
+
 async function supprimerArticle(id) {
+  // recuperation du Token dans le localStorage
   const token = localStorage.getItem("token")
+  // recuperation de l'id de l'article et suppression de l'article si token présent
   const response = await fetch(`http://localhost:3000/articles/${id}`, {
     method: "DELETE",
     headers: { "Authorization": `Bearer ${token}` }
   })
+  // Sinon renvoi message erreur
   if (!response.ok) {
     const error = await response.json()
     alert("Erreur suppression : " + (error.message || "inconnue"))
   }
 }
-
+ // affichage et creation des balises et boutons
 function afficherArticles(listeArticles) {
   const divConteneurActualites = document.querySelector('.conteneurActualites')
   divConteneurActualites.innerHTML = ""
@@ -82,7 +88,7 @@ function afficherArticles(listeArticles) {
         main()
       }
     })
-
+    // relier enfants aux parents
     footer.appendChild(publicationDate)
     footer.appendChild(boutonModifier)
     footer.appendChild(boutonSupprimer)
@@ -95,8 +101,9 @@ function afficherArticles(listeArticles) {
     divConteneurActualites.appendChild(divArticle)
   }
 }
-
+// afficher le bouton ajouter un article que si le token est present dans le localStorage
 function afficherBoutonAjouter() {
+  const token = localStorage.getItem("token")
   const container = document.querySelector('.conteneurActualites')
   container.innerHTML = ""
   const boutonAjouter = document.createElement("button")
@@ -107,7 +114,7 @@ function afficherBoutonAjouter() {
     window.location.href = "formarticle.html"
   })
 
-  container.parentNode.insertBefore(boutonAjouter, container)
+
 }
 
 async function main() {
@@ -124,7 +131,7 @@ async function main() {
   } catch (error) {
     console.error("Erreur :", error)
     alert("Impossible de charger les articles")
-  }
+  } 
 }
 
 main()

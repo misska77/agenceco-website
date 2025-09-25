@@ -41,11 +41,11 @@
         <section id="newslist">
             <h2>Ajouter une actualité</h2>
             <form class="ficheArticle">
-                <input type="text" name="title" placeholder="Le titre de mon actualité">
-                <textarea name="description" id="description" rows="3" placeholder="Sa description"></textarea>
-                <textarea name="contenu" id="contenu" rows="3" placeholder="Son contenu"></textarea>
-                <div class="btn-sauvegarder"><button type="submit">Sauvegarder</button></div>
-            </form>
+                <input type="text" id="title" placeholder="Le titre de mon actualité" required>
+                <textarea id="description" placeholder="Sa description" rows="4" required></textarea>
+                <textarea id="content" placeholder="Son contenu" rows="6" required></textarea>
+                <button id="save-btn">Sauvegarder</button>
+                </div>
         </section>
         <div class="bandeau-pied">
             <div class="bloc-rubriques">

@@ -13,25 +13,30 @@ btnToggle.onclick = function () {
   }
 }
 
-/*export function ajoutListenerAjoutActualite() {
-  const formulaireArticle = document.querySelector('formaticle.html/.ficheArticle')
-  formulaireArticle.addEventListener("submit", function(event) {
-    event.preventDefault()
-    //creation objet//
-    const article = {
-    articleId: parseInt(event.target.querySelector("[name=id]").value),
-    title: event.target.querySelector("[name=title]").value,
-    description: event.target.querySelector("[name=description]").value,
-    content: event.target.querySelector("[name=content]").value,
-    publicationDate: event.target.querySelector("[name=publicationDate]").value
-    }
+// formulaire et stockage des données
+ document.getElementById("save-btn").addEventListener("click", function () {
+      const titre = document.getElementById("title").value;
+      const description = document.getElementById("description").value;
+      const contenu = document.getElementById("content").value;
 
-    // creation charge utile au format JSON//
-    const chargeUtile = JSON.stringify(article)
-    fetch("http://localhost:3000/articles", {
-      method: "POST",
-      headers: {"Content-Type": "application"},
-      body: chargeUtile
-    })
-  })
-}*/
+      if (!titre || !description || !contenu) {
+        alert("Veuillez remplir tous les champs.");
+        return;
+      }
+
+      let article = JSON.parse(localStorage.getItem("articles")) || [];
+
+      article.push({
+        titre: titre,
+        description: description,
+        contenu: contenu,
+        date: new Date().toLocaleString()
+      });
+
+      localStorage.setItem("article", JSON.stringify(article));
+      
+      document.getElementById("title").value = "";
+      document.getElementById("description").value = "";
+      document.getElementById("content").value = "";
+    });
+
