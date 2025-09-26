@@ -76,117 +76,115 @@ p {
   text-align: center;
 }
 
-#newslist {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-}
-
+/* conteneur principal */
+#newslist,
 .conteneurActualites {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  width: 100%;
   gap: 20px;
   margin-bottom: 30px;
 }
 
+/* bouton ajouter : largeur fluide avec max */
 .btn-ajouter {
-  width: 350px;
-  height: 50px;
+  width: 100%;
+  max-width: 350px;
+  padding: 10px 16px;
   background-color: #c8ff00;
   color: black;
-  padding: 5px;
   border: none;
   border-radius: 6px;
   cursor: pointer;
   font-weight: 500;
-  font-size: 1.8em;
+  font-size: 1.1rem;
+  /* plus raisonnable */
   margin-bottom: 30px;
 }
 
+/* fiche article : carte centrée mais largeur fluide */
 .ficheArticle {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  text-align: center;
-  align-items: center;
+  align-items: stretch;
+  /* important : étirer le contenu horizontalement */
+  text-align: left;
+  /* texte aligné à gauche pour lecture */
   background-color: #469b61;
   border-radius: 10px;
   width: 85%;
-  padding: 30px;
+  max-width: 900px;
+  padding: 20px;
+  box-sizing: border-box;
+  word-break: break-word;
 }
 
+/* titres / paragraphes */
 .ficheArticle h3 {
   color: white;
-  font-size: 1.8em;
-  font-weight: 500;
-  padding: 20px 0;
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin: 0 0 8px;
 }
 
 .ficheArticle p {
-  font-size: 1.3em;
-  font-weight: 400;
+  font-size: 1rem;
   color: white;
-  padding-bottom: 25px;
+  margin: 6px 0;
+}
+
+/* pied de fiche : layout flexible */
+.pied-fiche {
+  display: flex;
+  width: 100%;
+  gap: 12px;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 12px;
+  box-sizing: border-box;
+  flex-wrap: wrap;
+}
+
+/* date : occupe l'espace disponible */
+.pied-fiche .date {
+  flex: 1 1 auto;
+  min-width: 140px;
+  margin: 0;
+  padding: 6px 0;
+  color: white;
+  text-align: left;
+}
+
+/* actions : conteneur des boutons */
+.actions {
+  display: flex;
+  gap: 8px;
+  flex: 0 0 auto;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+/* boutons : taille adaptative */
+.actions button,
+.pied-fiche button {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  flex: 0 1 auto;
+  width: 110px;
 }
 
 .btn-modifier {
-  display: flex;
-  position: absolute;
-  right: 180px;
-  width: 150px;
-  height: 30px;
   background-color: orange;
   color: white;
-  padding: 10px 15px;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  font-weight: 600;
-  font-size: 1.3em;
 }
 
 .btn-supprimer {
-  display: flex;
-  position: absolute;
-  right: 1px;
-  width: 150px;
-  height: 30px;
   background-color: red;
-  color: white;
-  padding: 10px 15px;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  font-weight: 600;
-  font-size: 1.3em;
-}
-
-.pied-fiche {
-  display: flex;
-  position: relative;
-  box-sizing: border-box;
-  width: 100%;
-  justify-content: center;
-  align-items: center;
-  margin-top: 10px;
-  gap: 80px;
-}
-
-.pied-fiche button {
-  justify-content: center;
-  align-items: center;
-  margin-left: 5px;
-}
-
-.date {
-  position: absolute;
-  left: 1px;
-  font-size: 1.3em;
-  padding-top: 20px;
   color: white;
 }
 
@@ -355,72 +353,83 @@ footer div {
     font-size: 1.9em;
   }
 
-  .ficheArticle {
-    margin: 20px;
-  }
-
-  .ficheArticle h3 {
-    font-size: 1.6em;
-  }
-
-  .ficheArticle p {
-    padding: 15px;
-  }
-
   .btn-ajouter {
     width: 80%;
-    font-size: 1.5em;
+  }
+  .ficheArticle {
+    width: 95%;
+    padding: 16px;
   }
 
   .pied-fiche {
-    display: flex;
     flex-direction: column;
-    height: 50px;
+    align-items: stretch;
+    gap: 10px;
   }
 
-  .bandeau-pied {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    column-count: 2;
-    gap: 30px;
-    padding: 20px;
-  }
-
-  .bloc-rubriques {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+  .pied-fiche .date {
+    width: 100%;
     text-align: left;
+  }
+
+  .actions {
     width: 100%;
+    justify-content: space-between;
   }
 
-  .rubriques p {
-    justify-content: center;
-    align-items: left;
+  .actions button {
+    flex: 1 1 48%;
+    /* deux boutons côte-à-côte si possible */
+    min-width: 0;
   }
 
-  .telephone-location {
-    padding-top: 20px;
-    width: 100%;
+  /* si l'espace est trop petit, les boutons se placent l'un sous l'autre */
+  .actions button.fullwidth {
+    flex-basis: 100%;
   }
 
-  .telephone-location p {
-    width: 75%;
-  }
+.bandeau-pied {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  column-count: 2;
+  gap: 30px;
+  padding: 20px;
+}
 
-  footer {
-    flex-direction: column-reverse;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    padding: 20px;
-    margin: 0;
-    gap: 20px;
-  }
+.bloc-rubriques {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-align: left;
+  width: 100%;
+}
 
-  footer p {
-    padding: 10px;
-  }
+.rubriques p {
+  justify-content: center;
+  align-items: left;
+}
 
+.telephone-location {
+  padding-top: 20px;
+  width: 100%;
+}
+
+.telephone-location p {
+  width: 75%;
+}
+
+footer {
+  flex-direction: column-reverse;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 20px;
+  margin: 0;
+  gap: 20px;
+}
+
+footer p {
+  padding: 10px;
+}
 }
