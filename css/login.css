@@ -1,7 +1,7 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: content;
+    box-sizing: border-box;
     list-style: none;
     text-decoration: none;
 }
@@ -83,10 +83,9 @@ form {
     align-items: center;
     background-color: white;
     gap: 30px;
-    padding: 0;
+    padding: 50px;
     margin: 50px;
 }
-
 
 #email,
 #password {
@@ -123,12 +122,11 @@ form button {
 
 .bandeau-pied {
     display: flex;
-    flex-direction: row;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
     background-color: #183a43;
-    padding-top: 20px;
-    padding-bottom: 20px;
+    padding-top: 35px;
+    padding-bottom: 35px;
     width: 100%;
 }
 
@@ -160,32 +158,30 @@ form button {
 .telephone-location {
     display: flex;
     flex-direction: column;
-    justify-content: left;
+    justify-content: center;
     gap: 20px;
-    width: 20%;
+    width: 15%;
+    height: 155px;
 }
 
 .telephone-location div {
     display: flex;
+    gap: 10px;
+}
+
+#icone-tel,
+#icone-location {
+    display: flex;
     justify-content: center;
     align-items: center;
     color: #c8ff00;
-    width: 250px;
+
 }
 
-#icone-tel {
-    padding-right: 20px;
-}
-
-#icone-location {
-    padding-right: 30px;
-}
-
-.telephone-location p {
-    font-size: 1.1em;
+.telephone-location div p {
+    font-size: 1em;
     color: white;
     text-align: left;
-    width: 150px;
     padding: 0;
 }
 
@@ -205,8 +201,19 @@ footer p {
     color: white;
 }
 
-.bouton-contact {
-    display: none;
+.btn-connexion {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #c8ff00;
+    color: #000;
+    border-radius: 10px;
+    border: none;
+    width: 200px;
+    height: 50px;
+    font-size: 1.2em;
+    font-weight: 500;
+    padding: 5px;
 }
 
 footer div {
@@ -215,70 +222,77 @@ footer div {
     align-items: center;
     color: white;
     font-size: 2.6em;
-    padding-right: 120px;
     gap: 50px;
 }
 
 @media screen and (max-width: 1088px) {
-p {
-    font-size: 1em;
-  }
+    p {
+        font-size: 1em;
+    }
 
-  .toggle {
-    display: block;
-  }
+    .toggle {
+        display: block;
+    }
 
-  .navbar {
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 50px;
-  }
+    .navbar {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 50px;
+    }
 
-  h1 {
-    font-size: 2em;
-  }
+    h1 {
+        font-size: 2em;
+    }
 
-  .logo-toggle {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    z-index: 20;
-    padding: 0;
-  }
+    .logo-toggle {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        z-index: 20;
+    }
 
-  .nav-links.is-visible {
-    display: block;
-  }
+    .nav-links.is-visible {
+        display: block;
+    }
 
-  .nav-links {
-    position: absolute;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    z-index: 10;
-    background-color: white;
-    width: 100%;
-    height: 100vh;
-    margin-top: 10px;
-    padding: 80px;
-    top: 0;
-    gap: 80px;
-  }
+    .nav-links {
+        position: absolute;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        z-index: 10;
+        background-color: white;
+        width: 100%;
+        margin-top: 50px;
+        top: 0;
+        gap: 80px;
+        padding: 80px 0px 80px 0px;
+    }
 
-  .hidden {
-    display: none;
-  }
+    .hidden {
+        display: none;
+    }
 
-  .nav-links a {
-    font-size: 1.8em;
-    font-weight: 600;
-  }
-  
+    .nav-links a {
+        font-size: 1.8em;
+        font-weight: 600;
+    }
+
     h2 {
         font-size: 1.9em;
+    }
+
+    form {
+        padding: 0;
+        margin: 10px;
+    }
+
+    #email,
+    #password {
+        width: 90%;
     }
 
     .bandeau-pied {
@@ -287,6 +301,7 @@ p {
         justify-content: center;
         column-count: 2;
         gap: 30px;
+        padding: 20px;
     }
 
     .bloc-rubriques {
@@ -303,35 +318,35 @@ p {
     }
 
     .telephone-location {
-        justify-content: center;
-        align-items: center;
         padding-top: 20px;
         width: 100%;
     }
-    .telephone-location {
-        width: 10%;
+
+    .telephone-location p {
+        width: 75%;
     }
-    Footer {
+
+    footer {
         flex-direction: column-reverse;
-        position: relative;
         justify-content: center;
         align-items: center;
         width: 100%;
-        height: 170px;
-        margin: 0px;
-        padding: 0px;
-    }
-
-    footer div {
-        position: absolute;
-        top: 80px;
-        width: 100%;
-        padding: 0px;
+        padding: 20px;
+        margin: 0;
+        gap: 20px;
     }
 
     footer p {
-        position: absolute;
-        top: 135px;
-        margin: 0px;
+        padding: 10px;
     }
+
+    .btn-connexion {
+        width: 200px;
+        height: 30px;
+        background-color: #c8ff00;
+        color: white;
+        border: none;
+        border-radius: 10px;
+    }
+
 }
