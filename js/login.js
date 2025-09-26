@@ -33,7 +33,7 @@ form.addEventListener("submit", async function postLogin(event) {
         if (response.ok) {
             console.log(data.token)
             localStorage.setItem("token", data.token)
-            window.location.href = "newslist.html"
+            window.location.href = "blog.html"
         } else {
             alert("Erreur : " +(data.message || "identifiants invalides"))
         }

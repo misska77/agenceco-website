@@ -85,7 +85,7 @@ p {
     border-radius: 15px;
     gap: 45px;
     padding: 50px;
-    margin: 80px 80px 200px 80px;
+    margin: 80px 80px 130px 80px;
 }
 
 .ficheArticle input {
@@ -95,7 +95,7 @@ p {
     color: white;
     font-size: 1.8em;
     width: 100%;
-    height: 50px;
+    height: 74px;
     padding: 15px;
 }
 
@@ -104,7 +104,7 @@ p {
     border: 3px solid white;
     color: white;
     width: 100%;
-    height: 80px;
+    height: 123px;
     font-size: 2.2em;
     padding: 15px;
     border-radius: 10px;
@@ -289,7 +289,7 @@ footer div {
     }
 
     .ficheArticle {
-        margin: 20px;
+        margin: 50px 10px;
         padding: 10px;
     }
 
