@@ -281,11 +281,15 @@ form {
   padding-top: 30px;
 }
 
-#nom, #categorie, #telephone, #ville, #email {
+#nom,
+#categorie,
+#telephone,
+#ville,
+#email {
   color: white;
   font-size: 1.5em;
   padding-left: 10px;
-} 
+}
 
 
 .coordonnees {
@@ -367,9 +371,10 @@ form {
 .champs-message label {
   text-align: left;
   width: 100px;
-  padding-right: 20px;
+
   border-bottom: 4px solid white;
   padding-bottom: 10px;
+  font-size: 1.2em;
 }
 
 .champs-message textarea {
@@ -493,7 +498,7 @@ form {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  max-width: 1000px;
+  width: 100%;
 }
 
 .galerieSlides {
@@ -514,7 +519,7 @@ form {
   justify-content: space-between;
   align-items: center;
   margin: 20px;
-  width: 100%;
+  width: 70%;
 }
 
 .prev,
@@ -545,7 +550,8 @@ form {
   justify-content: space-around;
   align-items: center;
   background-color: #183a43;
-  padding: 50px 30px;
+  padding-top: 20px;
+  padding-bottom: 20px;
   width: 100%;
 }
 
@@ -579,30 +585,31 @@ form {
   flex-direction: column;
   justify-content: left;
   gap: 20px;
-  width: 20%;
+  width: 15%;
 }
 
 .telephone-location div {
   display: flex;
+  gap: 10px;
+}
+
+#icone-tel,
+#icone-location {
+  display: flex;
   justify-content: center;
   align-items: center;
   color: #c8ff00;
-  width: 250px;
+
 }
 
 #icone-tel {
-  padding-right: 20px;
+  padding-left: 5px;
 }
 
-#icone-location {
-  padding-right: 30px;
-}
-
-.telephone-location p {
-  font-size: 1.1em;
+.telephone-location div p {
+  font-size: 1em;
   color: white;
   text-align: left;
-  width: 200px;
   padding: 0;
 }
 
@@ -643,7 +650,6 @@ footer div {
   align-items: center;
   color: white;
   font-size: 2.6em;
-  padding-right: 120px;
   gap: 50px;
 }
 
@@ -688,11 +694,10 @@ footer div {
     z-index: 10;
     background-color: white;
     width: 100%;
-    height: 100vh;
-    margin-top: 10px;
-    padding: 80px;
+    margin-top: 50px;
     top: 0;
     gap: 80px;
+    padding: 80px 0px 80px 0px;
   }
 
   .hidden {
@@ -702,10 +707,6 @@ footer div {
   .nav-links a {
     font-size: 1.8em;
     font-weight: 600;
-  }
-
-  .image-background {
-    height: 239px;
   }
 
   .titre-conteneur {
@@ -809,9 +810,15 @@ footer div {
   #categorie,
   #telephone,
   #ville,
-  #email,
-  #message {
+  #message,
+  #email {
     width: 80%;
+  }
+
+  .adresse-mail,
+  .champs-message {
+    padding-left: 30px;
+    padding-right: 30px;
   }
 
   .bouton-envoyer input {
@@ -900,23 +907,29 @@ footer div {
   }
 
   .telephone-location {
-    justify-content: center;
-    align-items: center;
     padding-top: 20px;
     width: 100%;
   }
 
-  footer {
-    flex-direction: column-reverse;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    height: 170px;
-    margin: 0px;
-    padding: 0px;
+  .telephone-location p {
+    width: 75%;
   }
 
- .btn-connexion {
+  footer {
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 20px;
+    margin: 0;
+    gap: 20px;
+  }
+
+  footer p {
+    padding: 10px;
+  }
+
+  .btn-connexion {
     width: 200px;
     height: 30px;
     background-color: #c8ff00;

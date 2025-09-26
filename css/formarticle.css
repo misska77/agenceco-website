@@ -129,9 +129,9 @@ p {
     justify-content: space-around;
     align-items: center;
     background-color: #183a43;
-    width: 100%;
     padding-top: 20px;
     padding-bottom: 20px;
+    width: 100%;
 }
 
 .bloc-rubriques {
@@ -187,7 +187,7 @@ p {
     font-size: 1.1em;
     color: white;
     text-align: left;
-    width: 200px;
+    width: 150px;
     padding: 0;
 }
 

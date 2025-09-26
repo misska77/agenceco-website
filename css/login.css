@@ -127,7 +127,8 @@ form button {
     justify-content: space-around;
     align-items: center;
     background-color: #183a43;
-    padding: 50px 30px;
+    padding-top: 20px;
+    padding-bottom: 20px;
     width: 100%;
 }
 
@@ -184,7 +185,7 @@ form button {
     font-size: 1.1em;
     color: white;
     text-align: left;
-    width: 200px;
+    width: 150px;
     padding: 0;
 }
 
@@ -219,7 +220,7 @@ footer div {
 }
 
 @media screen and (max-width: 1088px) {
-  p {
+p {
     font-size: 1em;
   }
 
@@ -245,6 +246,7 @@ footer div {
     align-items: center;
     width: 100%;
     z-index: 20;
+    padding: 0;
   }
 
   .nav-links.is-visible {
@@ -285,7 +287,6 @@ footer div {
         justify-content: center;
         column-count: 2;
         gap: 30px;
-        padding: 20px;
     }
 
     .bloc-rubriques {
@@ -307,7 +308,9 @@ footer div {
         padding-top: 20px;
         width: 100%;
     }
-
+    .telephone-location {
+        width: 10%;
+    }
     Footer {
         flex-direction: column-reverse;
         position: relative;

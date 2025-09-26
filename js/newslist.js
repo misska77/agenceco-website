@@ -114,7 +114,7 @@ function afficherBoutonAjouter() {
     window.location.href = "formarticle.html"
   })
 
-
+  container.parentNode.insertBefore(boutonAjouter, container)
 }
 
 async function main() {
