@@ -116,19 +116,17 @@ function afficherArticles(listeArticles) {
   // afficher le bouton ajouter un article que si le token est present dans le localStorage
 function afficherBoutonAjouter() {
   const token = localStorage.getItem("token");
-  if (!token) return; // si pas token, on ne montre pas
-
+  if (!token) return; 
+  
   const container = document.querySelector('.conteneurActualites');
-  // on ne fait pas container.innerHTML = "" ici pour éviter de supprimer les articles
-  // si jamais on rappelle cette fonction après affichage.
-  // si besoin de position, on insère le bouton avant le container
+ 
   if (!document.querySelector('.btn-ajouter')) {
     const boutonAjouter = document.createElement("button");
     boutonAjouter.textContent = "Ajouter une actualité";
     boutonAjouter.classList.add("btn-ajouter");
     boutonAjouter.type = "button";
     boutonAjouter.addEventListener("click", () => {
-      window.location.href = "formarticle.html";
+      window.location.href = "formajout.html";
     });
     container.parentNode.insertBefore(boutonAjouter, container);
   }
