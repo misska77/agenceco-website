@@ -83,54 +83,64 @@ p {
 }
 
 main {
-flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+#newslist {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .ficheArticle {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    background-color: #183a43;
-    border-radius: 15px;
-    gap: 45px;
-    padding: 50px;
-    margin: 80px 80px 200px 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+  flex-direction: column;
+  background-color: #183a43;
+  border-radius: 15px;
+  gap: 45px;
+  padding: 50px;
+  margin: 50px 0px 120px 0px;
+  width: 90%;
 }
 
 .ficheArticle input {
-    background-color: #183a43;
-    border: 3px solid white;
-    border-radius: 10px;
-    color: white;
-    font-size: 1.8em;
-    width: 100%;
-    height: 74px;
-    padding: 15px;
+  background-color: #183a43;
+  border: 3px solid white;
+  border-radius: 10px;
+  color: white;
+  font-size: 1.8em;
+  width: 100%;
+  height: 74px;
+  padding: 15px;
 }
 
 .ficheArticle textarea {
-    background-color: #183a43;
-    border: 3px solid white;
-    color: white;
-    width: 100%;
-    height: 123px;
-    font-size: 2.2em;
-    padding: 15px;
-    border-radius: 10px;
+  background-color: #183a43;
+  border: 3px solid white;
+  color: white;
+  width: 100%;
+  height: 123px;
+  font-size: 2.2em;
+  padding: 15px;
+  border-radius: 10px;
 }
 
-#save-btn {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 200px;
-    height: 60px;
-    border-radius: 30px 30px 30px 30px;
-    background-color: #c8ff00;
-    border: none;
-    font-size: 1.2em;
-    font-weight: 500;
+button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+  height: 60px;
+  border-radius: 30px 30px 30px 30px;
+  background-color: #c8ff00;
+  border: none;
+  font-size: 1.2em;
+  font-weight: 500;
 }
 
 footer {
@@ -304,21 +314,20 @@ footer {
     }
 
     .ficheArticle {
-        margin: 50px 10px;
-        padding: 10px;
-    }
+    padding: 10px;
+  }
 
-    .ficheArticle input {
-        font-size: 1.2em;
-    }
+  .ficheArticle input {
+    font-size: 1.2em;
+  }
 
-    .ficheArticle textarea {
-        font-size: 1.5em;
-    }
+  .ficheArticle textarea {
+    font-size: 1.5em;
+  }
 
-    .ficheArticle p {
-        padding: 15px;
-    }
+  .ficheArticle p {
+    padding: 15px;
+  }
 
   .footer-link {
     display: flex;

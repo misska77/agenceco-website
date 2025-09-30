@@ -1,4 +1,4 @@
-* {
+* , ::before, ::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -76,6 +76,14 @@ p {
     text-align: center;
 }
 
+.content {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
 form {
     display: flex;
     flex-direction: column;
@@ -83,25 +91,22 @@ form {
     align-items: center;
     background-color: white;
     gap: 30px;
-    padding: 50px;
-    margin: 50px;
+    padding:30px;
 }
 
 #email,
 #password {
     display: flex;
-    width: 45%;
-    height: 60px;
+    width: 50%;
     border-radius: 10px;
     border: 3px solid rgb(124, 124, 124);
     box-shadow: 0px 5px 5px 00px rgb(187, 187, 187);
-    ;
     font-size: 1.3em;
     color: rgb(5, 5, 5);
     padding: 10px;
 }
 
-form button {
+#btn-connexion {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -110,10 +115,8 @@ form button {
     border-radius: 30px 30px 30px 30px;
     background-color: #c8ff00;
     border: none;
-    font-size: 1.1em;
-    font-weight: 500;
-    margin-top: 30px;
-    margin-bottom: 150px;
+    font-size: 1.5em;
+    font-weight: 600;
 }
 
 .bouton-contact {
@@ -121,113 +124,113 @@ form button {
 }
 
 footer {
-  display: flex;
-  flex-direction: column;
+    display: flex;
+    flex-direction: column;
 }
 
 .footer-link {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #183a43;
-  padding-top: 35px;
-  padding-bottom: 35px;
-  width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #183a43;
+    padding-top: 35px;
+    padding-bottom: 35px;
+    width: 100%;
 }
 
 .bloc-rubriques {
-  display: flex;
-  justify-content: space-around;
-  width: 75%;
-  gap: 50px;
+    display: flex;
+    justify-content: space-around;
+    width: 75%;
+    gap: 50px;
 }
 
 .rubriques p {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: left;
-  text-align: left;
-  color: white;
-  font-size: 1.1em;
-  padding: 0 15px;
-  width: 180px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+    text-align: left;
+    color: white;
+    font-size: 1.1em;
+    padding: 0 15px;
+    width: 180px;
 }
 
 .titre-rubrique {
-  font-size: 1.5em;
-  color: white;
-  font-weight: 500;
+    font-size: 1.5em;
+    color: white;
+    font-weight: 500;
 }
 
 .telephone-location {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 20px;
-  width: 15%;
-  height: 155px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+    width: 15%;
+    height: 155px;
 }
 
 .telephone-location div {
-  display: flex;
-  gap: 10px;
+    display: flex;
+    gap: 10px;
 }
 
 #icone-tel,
 #icone-location {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: #c8ff00;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #c8ff00;
 
 }
 
 .telephone-location div p {
-  font-size: 1em;
-  color: white;
-  text-align: left;
-  padding: 0;
+    font-size: 1em;
+    color: white;
+    text-align: left;
+    padding: 0;
 }
 
 .footer-copyright {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #0c2227;
-  padding-top: 30px;
-  padding-bottom: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #0c2227;
+    padding-top: 30px;
+    padding-bottom: 30px;
 }
 
 .footer-copyright p {
-  text-align: left;
-  font-size: 0.96em;
-  font-weight: 300;
-  color: white;
+    text-align: left;
+    font-size: 0.96em;
+    font-weight: 300;
+    color: white;
 }
 
 .footer-copyright div {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: white;
-  font-size: 2.6em;
-  gap: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 2.6em;
+    gap: 50px;
 }
 
 .btn-connexion {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #c8ff00;
-  color: #000;
-  border-radius: 10px;
-  border: none;
-  width: 200px;
-  height: 50px;
-  font-size: 1.2em;
-  font-weight: 500;
-  padding: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #c8ff00;
+    color: #000;
+    border-radius: 10px;
+    border: none;
+    width: 200px;
+    height: 50px;
+    font-size: 1.2em;
+    font-weight: 500;
+    padding: 5px;
 }
 
 @media screen and (max-width: 1088px) {
@@ -300,58 +303,58 @@ footer {
         width: 90%;
     }
 
-  .footer-link {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    column-count: 2;
-    gap: 30px;
-    padding: 20px;
-  }
+    .footer-link {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        column-count: 2;
+        gap: 30px;
+        padding: 20px;
+    }
 
-  .bloc-rubriques {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    text-align: left;
-    width: 100%;
-  }
+    .bloc-rubriques {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        text-align: left;
+        width: 100%;
+    }
 
-  .rubriques p {
-    justify-content: center;
-    align-items: left;
-  }
+    .rubriques p {
+        justify-content: center;
+        align-items: left;
+    }
 
-  .telephone-location {
-    padding-top: 20px;
-    width: 100%;
-  }
+    .telephone-location {
+        padding-top: 20px;
+        width: 100%;
+    }
 
-  .telephone-location p {
-    width: 75%;
-  }
+    .telephone-location p {
+        width: 75%;
+    }
 
-  .footer-copyright p {
-    padding: 10px;
-  }
+    .footer-copyright p {
+        padding: 10px;
+    }
 
-  .footer-copyright {
-    flex-direction: column-reverse;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    padding: 20px;
-    margin: 0;
-    gap: 20px;
-  }
+    .footer-copyright {
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        padding: 20px;
+        margin: 0;
+        gap: 20px;
+    }
 
-  .btn-connexion {
-    width: 200px;
-    height: 30px;
-    background-color: #c8ff00;
-    color: black;
-    border: none;
-    border-radius: 10px;
-  }
+    .btn-connexion {
+        width: 200px;
+        height: 30px;
+        background-color: #c8ff00;
+        color: black;
+        border: none;
+        border-radius: 10px;
+    }
 
 }
