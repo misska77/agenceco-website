@@ -12,7 +12,6 @@ btnToggle.onclick = function () {
     menu.classList.toggle("hidden");
   }
 }
-// récuperation des articles de l'API si Token Validé
 
 async function getArticles() {
   // recuperation du Token dans le localStorage
@@ -30,7 +29,6 @@ async function getArticles() {
 }
 
 // gestion du bouton supprimer un article
-
 async function supprimerArticle(id) {
   const token = localStorage.getItem("token");
   const response = await fetch(`http://localhost:3000/articles/${id}`, {
@@ -71,7 +69,6 @@ function afficherArticles(listeArticles) {
     publicationDate.classList.add("date");
     publicationDate.textContent = article.publicationDate;
 
-    // actions container (utile pour flex-wrap en CSS)
     const actions = document.createElement("div");
     actions.classList.add("actions");
 
@@ -101,7 +98,7 @@ function afficherArticles(listeArticles) {
       }
     });
 
-    // assemblage
+    // rattachement enfants au parent
     actions.appendChild(boutonModifier);
     actions.appendChild(boutonSupprimer);
 

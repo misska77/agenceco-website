@@ -58,17 +58,17 @@ function afficherArticles(listeArticles) {
     divFicheArticle.classList.add("ficheArticle")
 
     const title = document.createElement("h3")
-    title.textContent = article.title
+    title.innerHTML += article.title
 
     const description = document.createElement("p")
-    description.textContent = article.description
+    description.innerHTML += article.description
 
     const content = document.createElement("p")
-    content.textContent = article.content
+    content.innerHTML += article.content
 
     const publicationDate = document.createElement("p")
     publicationDate.classList.add("date")
-    publicationDate.textContent = article.publicationDate
+    publicationDate.innerHTML += article.publicationDate
 
     divConteneurActualites.appendChild(divFicheArticle)
     divFicheArticle.appendChild(title)
