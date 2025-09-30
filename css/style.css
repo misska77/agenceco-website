@@ -503,6 +503,7 @@ form {
 
 .galerieSlides {
   display: none;
+  width: 80%;
 }
 
 .conteneur-galerie p {
@@ -544,7 +545,12 @@ form {
   color: #c8ff00;
 }
 
-.bandeau-pied {
+footer {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-link {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -609,7 +615,7 @@ form {
   padding: 0;
 }
 
-footer {
+.footer-copyright {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -618,11 +624,20 @@ footer {
   padding-bottom: 30px;
 }
 
-footer p {
+.footer-copyright p {
   text-align: left;
   font-size: 0.96em;
   font-weight: 300;
   color: white;
+}
+
+.footer-copyright div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 2.6em;
+  gap: 50px;
 }
 
 .btn-connexion {
@@ -640,14 +655,7 @@ footer p {
   padding: 5px;
 }
 
-footer div {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: white;
-  font-size: 2.6em;
-  gap: 50px;
-}
+
 
 @media screen and (max-width: 1088px) {
   p {
@@ -890,7 +898,7 @@ footer div {
     display: none;
   }
 
-  .bandeau-pied {
+  .footer-link {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -921,7 +929,11 @@ footer div {
     width: 75%;
   }
 
-  footer {
+  .footer-copyright p {
+    padding: 10px;
+  }
+
+  .footer-copyright {
     flex-direction: column-reverse;
     justify-content: center;
     align-items: center;
@@ -931,15 +943,11 @@ footer div {
     gap: 20px;
   }
 
-  footer p {
-    padding: 10px;
-  }
-
   .btn-connexion {
     width: 200px;
     height: 30px;
     background-color: #c8ff00;
-    color: white;
+    color: black;
     border: none;
     border-radius: 10px;
   }
