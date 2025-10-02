@@ -1,87 +1,3 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    list-style: none;
-    text-decoration: none;
-}
-
-html, body {
-    height: 100%;
-}
-
-body {
-    background-color: white;
-    font-family: "Poppins", sans-serif;
-    font-weight: 400;
-    font-size: 1em;
-    display:flex;
-    flex-direction: column;
-}
-
-.navbar {
-  position: relative;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: white;
-}
-
-.logo-toggle {
-  padding: 0 15px;
-}
-
-h1 {
-  color: #255919;
-  font-size: 43px;
-  font-weight: 700;
-}
-
-.eco {
-  font-style: italic;
-}
-
-.toggle {
-  font-size: 2.5em;
-  color: #255919;
-  display: none;
-}
-
-.nav-links {
-  display: flex;
-  justify-content: end;
-  gap: 18px;
-  padding-right: 15px;
-}
-
-.nav-links a {
-  color: #000;
-  font-weight: 500;
-  font-size: 20px;
-}
-
-h2 {
-  color: #469b61;
-  font-size: 3.3em;
-  font-weight: 600;
-  text-align: center;
-  justify-content: center;
-  background-color: white;
-  margin-top: 30px;
-  margin-bottom: 20px;
-}
-
-p {
-  padding: 0px 40px;
-  font-size: 1.8em;
-  font-weight: 500;
-  text-align: center;
-}
-
 main {
   display: flex;
   flex-direction: column;
@@ -255,66 +171,12 @@ footer {
 }
 
 @media screen and (max-width: 1088px) {
-    p {
-        font-size: 1em;
-    }
+  
 
-    .toggle {
-        display: block;
-    }
-
-    .navbar {
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-        height: 50px;
-    }
-
-    h1 {
-        font-size: 2em;
-    }
-
-    .logo-toggle {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        width: 100%;
-        z-index: 20;
-    }
-
-    .nav-links.is-visible {
-        display: block;
-    }
-
-    .nav-links {
-        position: absolute;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        z-index: 10;
-        background-color: white;
-        width: 100%;
-        margin-top: 50px;
-        top: 0;
-        gap: 80px;
-        padding: 80px 0px 80px 0px;
-    }
-
-    .hidden {
-        display: none;
-    }
-
-    .nav-links a {
-        font-size: 1.8em;
-        font-weight: 600;
-    }
-
-    h2 {
-        font-size: 1.9em;
-    }
-
-    .ficheArticle {
+  .form {
+    padding: 30px;
+  }
+  .ficheArticle {
     padding: 10px;
   }
 
@@ -334,60 +196,6 @@ footer {
     width: 60%;
     height: 40px;
     font-size: 1.2em;
-  }
-
-  .footer-link {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    column-count: 2;
-    gap: 30px;
-    padding: 20px;
-  }
-
-  .bloc-rubriques {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    text-align: left;
-    width: 100%;
-  }
-
-  .rubriques p {
-    justify-content: center;
-    align-items: left;
-  }
-
-  .telephone-location {
-    padding-top: 20px;
-    width: 100%;
-  }
-
-  .telephone-location p {
-    width: 75%;
-  }
-
-  .footer-copyright p {
-    padding: 10px;
-  }
-
-  .footer-copyright {
-    flex-direction: column-reverse;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    padding: 20px;
-    margin: 0;
-    gap: 20px;
-  }
-
-  .btn-connexion {
-    width: 200px;
-    height: 30px;
-    background-color: #c8ff00;
-    color: black;
-    border: none;
-    border-radius: 10px;
   }
 
 }

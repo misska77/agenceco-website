@@ -1,3 +1,19 @@
+// Menu burger
+const menu = document.querySelector(".nav-links");
+const btnToggle = document.querySelector(".toggle");
+const iconToggle = document.querySelector(".fa-bars");
+
+btnToggle.onclick = function () {
+  if (iconToggle.classList.contains("fa-bars")) {
+    iconToggle.classList.replace("fa-bars", "fa-times");
+    menu.classList.toggle("hidden");
+  } else {
+    iconToggle.classList.replace("fa-times", "fa-bars");
+    menu.classList.toggle("hidden");
+  }
+}
+
+
 function getUrlParam(paramName) {
   const params = new URLSearchParams(window.location.search)
   const param = params.get(paramName)
@@ -45,31 +61,31 @@ document.getElementById("formModifArticle").addEventListener("submit", async fun
     return;
   }
 
-  const token = localStorage.getItem("token");
+const token = localStorage.getItem("token");
 
   try {
     const response = await fetch(`http://localhost:3000/articles/${id}`, {
-      method: "PUT",
+    method: "PUT",
       headers: {
         "Content-Type": "application/json",
         "Authorization": `Bearer ${token}`
       },
 
-      body: JSON.stringify({
+      body :JSON.stringify({
         title: titre,
         description: description,
         content: contenu
       })
-    });
+  });
 
-    const result = await response.json();
+  const result = await response.json();
 
-    if (response.ok) {
-      window.location.href = "blog.html"
-    } else {
-      alert(`erreur : ${result.message || "une erreur s'est produite."}`);
-    }
-  } catch (error) {
+  if (response.ok) {
+    window.location.href = "blog.html"
+} else {
+  alert(`erreur : ${result.message || "une erreur s'est produite."}`);
+}
+  } catch (error){
     alert("Erreur lors de la mise a jour : " + error.message);
   }
 })

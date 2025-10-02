@@ -212,7 +212,7 @@ footer {
   gap: 50px;
 }
 
-.btn-connexion {
+.btn-connect {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -222,7 +222,7 @@ footer {
   border: none;
   width: 200px;
   height: 50px;
-  font-size: 1.2em;
+  font-size: 1.5em;
   font-weight: 500;
   padding: 5px;
 }
@@ -230,9 +230,6 @@ footer {
 
 
 @media screen and (max-width: 1088px) {
-  p {
-    font-size: 1em;
-  }
 
   .toggle {
     display: block;
@@ -285,7 +282,13 @@ footer {
     font-weight: 600;
   }
 
+  h2 {
+    font-size: 2.8em;
+  }
 
+  p {
+    font-size: 1.2em;
+  }
 
   .footer-link {
     display: flex;
@@ -332,9 +335,10 @@ footer {
     gap: 20px;
   }
 
-  .btn-connexion {
-    width: 50%;
+  .btn-connect {
+    width: 40%;
     height: 40px;
+    font-size: 1.2em;
     background-color: #c8ff00;
     color: black;
     border: none;
