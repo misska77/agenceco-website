@@ -13,8 +13,23 @@ btnToggle.onclick = function () {
   }
 }
 
+async function ajouterArticle(title, description, content) {
+
+  const response = await fetch("http://localhost:3000/articles", {
+    method: "POST",
+    headers: {
+      "accept": "application/json",
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({ title, description, content })
+  })
+
+  const data = await response.json()
+}
+
 // formulaire et stockage des données
-document.getElementById("save-btn").addEventListener("click", function () {
+document.getElementById("formAjoutArticle").addEventListener("submit", async function (event) {
+  event.preventDefault()
   const titre = document.getElementById("title").value;
   const description = document.getElementById("description").value;
   const contenu = document.getElementById("content").value;
@@ -24,19 +39,11 @@ document.getElementById("save-btn").addEventListener("click", function () {
     return;
   }
 
-  let article = JSON.parse(localStorage.getItem("articles")) || [];
+  console.log(titre, description, contenu)
 
-  article.push({
-    titre: titre,
-    description: description,
-    contenu: contenu,
-    date: new Date().toLocaleString()
-  });
+  await ajouterArticle(titre, description, contenu)
 
-  localStorage.setItem("article", JSON.stringify(article));
+  window.location.href = "blog.html"
 
-  document.getElementById("title").value = "";
-  document.getElementById("description").value = "";
-  document.getElementById("content").value = "";
 });
 

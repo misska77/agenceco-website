@@ -39,8 +39,9 @@
     </header>
     <main>
         <section id="newslist">
-            <h2>Ajouter une actualité</h2>
-            <form class="ficheArticle">
+            <h2>Modifier une actualité</h2>
+            <form class="ficheArticle" id="formModifArticle">
+                <input type="hidden" id="id">
                 <input type="text" id="title" placeholder="Le titre de mon actualité" required>
                 <textarea id="description" placeholder="Sa description" rows="4" required></textarea>
                 <textarea id="content" placeholder="Son contenu" rows="6" required></textarea>
