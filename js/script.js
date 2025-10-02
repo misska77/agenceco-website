@@ -51,31 +51,37 @@ function afficherArticles(listeArticles) {
   const divConteneurActualites = document.querySelector('.conteneurActualites')
   console.log("afficherArticles")
 
+  divConteneurActualites.innerHTML = '';
 
   for (let i = 0; i < listeArticles.length; i++) {
-    const article = listeArticles[i]
+    const article = listeArticles[i];
+
+    const lien = document.createElement('a');
+    lien.href = `detail.html?id=${article.id}`;
+    lien.classList.add("ficheArticle");
+    lien.style.display = "block"
+
     const divFicheArticle = document.createElement('div')
     divFicheArticle.classList.add("ficheArticle")
 
     const title = document.createElement("h3")
-    title.innerHTML += article.title
+    title.textContent = article.title
 
     const description = document.createElement("p")
-    description.innerHTML += article.description
+    description.textContent = article.description
 
     const content = document.createElement("p")
-    content.innerHTML += article.content
+    content.textContent = article.content
 
     const publicationDate = document.createElement("p")
     publicationDate.classList.add("date")
-    publicationDate.innerHTML += article.publicationDate
+    publicationDate.textContent = article.publicationDate
 
-    divConteneurActualites.appendChild(divFicheArticle)
-    divFicheArticle.appendChild(title)
-    divFicheArticle.appendChild(description)
-    divFicheArticle.appendChild(content)
-    divFicheArticle.appendChild(publicationDate)
-
+    divConteneurActualites.appendChild(lien)
+    lien.appendChild(title)
+    lien.appendChild(description)
+    lien.appendChild(content)
+    lien.appendChild(publicationDate)
   }
 }
 
