@@ -78,7 +78,7 @@ function afficherArticles(listeArticles) {
     boutonModifier.textContent = "Modifier";
     boutonModifier.classList.add("btn-modifier");
     boutonModifier.addEventListener("click", () => {
-      window.location.href = `formarticle.html?id=${article.id}`;
+      window.location.href = `formmodif.html?id=${article.id}`;
     });
 
     // Bouton Supprimer (appel API)
@@ -113,13 +113,13 @@ function afficherArticles(listeArticles) {
     divConteneurActualites.appendChild(divArticle);
   }
 }
-  // afficher le bouton ajouter un article que si le token est present dans le localStorage
+// afficher le bouton ajouter un article que si le token est present dans le localStorage
 function afficherBoutonAjouter() {
   const token = localStorage.getItem("token");
-  if (!token) return; 
-  
+  if (!token) return;
+
   const container = document.querySelector('.conteneurActualites');
- 
+
   if (!document.querySelector('.btn-ajouter')) {
     const boutonAjouter = document.createElement("button");
     boutonAjouter.textContent = "Ajouter une actualité";
@@ -132,22 +132,22 @@ function afficherBoutonAjouter() {
   }
 }
 
-  async function main() {
-    const token = localStorage.getItem("token")
-    if (!token) {
-      window.location.href = "login.html"
-      return
-    }
-
-    try {
-      afficherBoutonAjouter()
-      let listeArticles = await getArticles()
-      afficherArticles(listeArticles)
-    } catch (error) {
-      console.error("Erreur :", error)
-      alert("Impossible de charger les articles")
-    }
+async function main() {
+  const token = localStorage.getItem("token")
+  if (!token) {
+    window.location.href = "login.html"
+    return
   }
 
-  main()
+  try {
+    afficherBoutonAjouter()
+    let listeArticles = await getArticles()
+    afficherArticles(listeArticles)
+  } catch (error) {
+    console.error("Erreur :", error)
+    alert("Impossible de charger les articles")
+  }
+}
+
+main()
 

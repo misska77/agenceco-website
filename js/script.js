@@ -50,7 +50,7 @@ async function getArticles() {
 function afficherArticles(listeArticles) {
   const divConteneurActualites = document.querySelector('.conteneurActualites')
   console.log("afficherArticles")
-  
+
 
   for (let i = 0; i < listeArticles.length; i++) {
     const article = listeArticles[i]
