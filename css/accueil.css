@@ -509,17 +509,18 @@ form {
   }
 
   .ficheArticle {
-    margin: 20px;
     padding: 0;
     height: 352px;
   }
 
   .ficheArticle h3 {
-    font-size: 1.6em;
+    font-size: 1.3em;
+    padding: 15px;
   }
 
   .ficheArticle p {
-    padding: 15px;
+    font-size: 1.1em ;
+    padding: 8px;
   }
 
   .date {
