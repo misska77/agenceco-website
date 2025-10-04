@@ -1,17 +1,18 @@
+// recuperer l'Id de l'article
 function getUrlParam(paramName) {
   const params = new URLSearchParams(window.location.search)
   const param = params.get(paramName)
   return param
 }
 
+//recuperer l'article//
 async function getArticle(id) {
-  // recuperation du Token dans le localStorage
   const token = localStorage.getItem("token")
   let response = await fetch(`http://localhost:3000/articles/${id}`, {
     headers: { "Authorization": `Bearer ${token}` }
   })
 
-  //si token présent dans localStorage - l'utilisateur est connecté au serveur - l'API retourne la liste des articles
+  //si token ok - l'API retourne la liste des articles
   let article = await response.json()
   if (response.ok) {
     return article
@@ -20,6 +21,7 @@ async function getArticle(id) {
   throw new Error(article.message || "Impossible de contacter le serveur")
 }
 
+//
 async function initForm() {
   const id = getUrlParam("id")
   const article = await getArticle(id)

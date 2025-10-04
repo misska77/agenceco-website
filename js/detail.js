@@ -11,9 +11,10 @@ if (id) {
     .then(article => {
       const container = document.getElementById("detail-container");
       container.innerHTML = `
-            <h1>${article.title}</h1>
-            <p>${article.content}</p>
+            <h3>${article.title}</h3>
             <p><strong>Date :</strong> ${article.publicationDate}</p>
+            <img src="" alt="" class="">
+            <p>${article.content}<p>
           `;
     })
     .catch(err => {

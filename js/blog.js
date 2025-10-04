@@ -13,13 +13,14 @@ btnToggle.onclick = function () {
   }
 }
 
+// recuperer les articles si token ok
 async function getArticles() {
   // recuperation du Token dans le localStorage
   const token = localStorage.getItem("token")
   let response = await fetch("http://localhost:3000/articles", {
     headers: { "Authorization": `Bearer ${token}` }
   })
-  //si token présent dans localStorage - l'utilisateur est connecté au serveur - l'API retourne la liste des articles
+  //si token ok - l'API retourne la liste des articles
   let listeArticles = await response.json()
   if (response.ok) {
     return listeArticles

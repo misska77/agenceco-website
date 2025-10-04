@@ -76,7 +76,6 @@ p {
   text-align: center;
 }
 
-/* conteneur principal */
 #newslist,
 .conteneurActualites {
   display: flex;
@@ -87,7 +86,6 @@ p {
   margin-bottom: 30px;
 }
 
-/* bouton ajouter : largeur fluide avec max */
 .btn-ajouter {
   width: 100%;
   max-width: 350px;
@@ -99,18 +97,15 @@ p {
   cursor: pointer;
   font-weight: 500;
   font-size: 1.1rem;
-  /* plus raisonnable */
   margin-bottom: 30px;
 }
 
-/* fiche article : carte centrée mais largeur fluide */
+
 .ficheArticle {
   display: flex;
   flex-direction: column;
   align-items: stretch;
-  /* important : étirer le contenu horizontalement */
   text-align: left;
-  /* texte aligné à gauche pour lecture */
   background-color: #469b61;
   border-radius: 10px;
   width: 85%;
@@ -120,7 +115,6 @@ p {
   word-break: break-word;
 }
 
-/* titres / paragraphes */
 .ficheArticle h3 {
   color: white;
   font-size: 1.4rem;
@@ -134,7 +128,6 @@ p {
   margin: 6px 0;
 }
 
-/* pied de fiche : layout flexible */
 .pied-fiche {
   display: flex;
   width: 100%;
@@ -146,7 +139,6 @@ p {
   flex-wrap: wrap;
 }
 
-/* date : occupe l'espace disponible */
 .pied-fiche .date {
   flex: 1 1 auto;
   min-width: 140px;
@@ -156,7 +148,6 @@ p {
   text-align: left;
 }
 
-/* actions : conteneur des boutons */
 .actions {
   display: flex;
   gap: 8px;
@@ -165,7 +156,6 @@ p {
   align-items: center;
 }
 
-/* boutons : taille adaptative */
 .actions button,
 .pied-fiche button {
   padding: 8px 12px;
