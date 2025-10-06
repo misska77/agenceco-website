@@ -100,154 +100,104 @@
   text-align: center;
 }
 
-.conteneur-contact {
-  background-color: #183a43;
-  padding-top: 30px;
-}
-
 #contact {
   background-color: #183a43;
   color: #c8ff00;
   font-weight: 700;
 }
 
-.conteneur-contact p {
+.conteneur-contact {
+  display: flex;
+  flex-direction: column;
   background-color: #183a43;
-  color: white;
-}
-
-form {
-  background-color: #183a43;
-  color: white;
   padding-top: 30px;
 }
 
-#nom,
-#categorie,
-#telephone,
-#ville,
-#email {
+.conteneur-contact p {
+  background-color: #183a43;
+  color: white;
+  padding: 30px 0px;
+}
+
+.formContact {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #183a43;
+  width: 100%;
+  gap: 30px
+}
+
+.nom-categ,
+.tel-ville {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+}
+
+.nom-categ input,
+.tel-ville input {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  margin: 20px;
+  width: 75%;
+  height: 50px;
+  background-color: #183a43;
+  border-bottom: solid 4px white;
   color: white;
   font-size: 1.5em;
-  padding-left: 10px;
-}
-
-.coordonnees {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 50px;
-}
-
-.coordonnees div {
-  display: flex;
-  flex-direction: row;
-  padding-bottom: 30px;
-}
-
-.coordonnees input {
-  display: flex;
-  width: 400px;
-  background-color: #183a43;
   border-top: none;
   border-left: none;
   border-right: none;
-  border-bottom: 4px solid white;
-  padding-bottom: 10px;
 }
 
-.coordonnees label {
-  text-align: left;
-  width: 100px;
-  font-size: 1.2em;
-  border-bottom: 4px solid white;
-  padding-bottom: 10px;
-}
-
-.adresse-mail {
+.email-message {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  width: 80%;
 }
 
-.adresse-mail div {
-  display: flex;
-  flex-direction: row;
-  padding-bottom: 50px;
-}
-
-.adresse-mail label {
-  text-align: left;
-  width: 100px;
-  font-size: 1.2em;
-  padding-right: 20px;
-  border-bottom: 4px solid white;
-  padding-bottom: 10px;
-}
-
-.adresse-mail input {
-  display: flex;
-  width: 950px;
+.email-message input,
+textarea {
+  padding: 10px;
+  margin: 20px;
+  width: 98%;
+  height: 50px;
   background-color: #183a43;
-  border-top: none;
-  border-left: none;
-  border-right: none;
-  border-bottom: 4px solid white;
-  padding-bottom: 10px;
-}
-
-.champs-message {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.champs-message div {
-  display: flex;
-  flex-direction: row;
-  padding-bottom: 30px;
-}
-
-.champs-message label {
-  text-align: left;
-  width: 100px;
-
-  border-bottom: 4px solid white;
-  padding-bottom: 10px;
-  font-size: 1.2em;
-}
-
-.champs-message textarea {
-  display: flex;
-  width: 950px;
-  background-color: #183a43;
+  border-bottom: solid 4px white;
   color: white;
-  font-size: 2em;
+  font-size: 1.5em;
   border-top: none;
   border-left: none;
   border-right: none;
-  border-bottom: 4px solid white;
+}
+
+.email-message textarea {
+  font-size: 2em;
 }
 
 .bouton-envoyer {
   display: flex;
-  justify-content: right;
+  justify-content: flex-end;
+  padding-right: 150px;
   align-items: center;
-  padding-bottom: 80px;
-  padding-right: 135px;
+  width: 100%;
+  padding: 50px 150px 50px 0px;
 }
 
-.bouton-envoyer input {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 200px;
+.bouton-envoyer button {
+  width: 15%;
   height: 60px;
-  border-radius: 30px 30px 30px 30px;
-  background-color: #c8ff00;
-  border: none;
   font-size: 1.5em;
   font-weight: 500;
+  border: none;
+  border-radius: 30px 30px 30px 30px;
+  background-color: #c8ff00;
 }
 
 .Photo-reunion {
@@ -388,7 +338,7 @@ form {
 
 @media screen and (max-width: 1088px) {
 
-.image-background {
+  .image-background {
     height: 239px;
   }
 
@@ -456,52 +406,24 @@ form {
     font-size: 1.3em;
   }
 
-  .conteneur-contact {
-    padding-top: 5px;
-  }
-
-  .coordonnees {
-    display: flex;
+  .nom-categ,
+  .tel-ville {
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding-bottom: 50px;
   }
 
-  .coordonnees div {
-    width: 80%;
-    padding-bottom: 0px;
+  .nom-categ input,
+  .tel-ville input {
+    width: 100%;
   }
-
-  #nom,
-  #categorie,
-  #telephone,
-  #ville,
-  #message,
-  #email {
-    width: 80%;
-  }
-
-  .adresse-mail,
-  .champs-message {
-    padding-left: 30px;
-    padding-right: 30px;
-  }
-
-  .bouton-envoyer input {
-    width: 150px;
-    height: 45px;
-  }
-
+  
   .bouton-envoyer {
     justify-content: center;
-    padding-right: 0px;
+    width: 100%;
+    padding: 30px 0px 30px 0px;
   }
 
-  .bouton {
-    width: 120px;
-    height: 40px;
-    font-weight: 500;
+  .bouton-envoyer button {
+    width: 60%;
   }
 
   .Photo-reunion {

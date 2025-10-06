@@ -103,43 +103,26 @@
       <div class="conteneur-contact">
         <h2 id="contact">Contactez-nous</h2>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Donec sed leo in.</p>
-        <form>
-          <div class="coordonnees">
-            <div>
-              <label for="nom">Nom</label>
-              <input type="text" name="nom" id="nom">
-            </div>
-            <div>
-              <label for="categorie">Catégorie</label>
-              <input type="text" name="categorie" id="categorie">
-            </div>
+        <form class="formContact">
+          <div class="nom-categ">
+            <input type="text" id="nom" name="nom" placeholder="Nom" required>
+            <input type="text" id="categorie" name="categorie" placeholder="Catégorie" required>
           </div>
-          <div class="coordonnees">
-            <div>
-              <label for="telephone">Téléphone</label>
-              <input type="tel" name="telephone" id="telephone">
-            </div>
-            <div>
-              <label for="ville">Ville</label>
-              <input type="text" name="ville" id="ville">
-            </div>
+          <div class="tel-ville">
+            <input type="tel" id="telephone" name="telephone" placeholder="Téléphone" required>
+            <input type="text" id="ville" name="ville" placeholder="Ville" required>
           </div>
-          <div class="adresse-mail">
-            <div>
-              <label for="email">Email</label>
-              <input type="email" name="email" id="email">
-            </div>
+          <div class="email-message">
+            <input type="email" id="email" name="email" placeholder="E-mail" required>
+            <textarea id="message" name="message" rows="5" placeholder="Message" required></textarea>
           </div>
-          <div class="champs-message">
-            <div>
-              <label for="message">Message</label>
-              <textarea name="message" id="message" rows="20"></textarea>
-            </div>
+          <div class="bouton-envoyer">
+          <button type="submit" id="bouton-envoyer">Envoyer</button>
+          </div>
         </form>
+        
       </div>
-      <div class="bouton-envoyer">
-        <input type="submit" value=Envoyer>
-      </div>
+
     </section>
     <section id="conteneur-a-propos-de-nous">
       <div class="conteneur-a-propos">
