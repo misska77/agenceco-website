@@ -37,11 +37,11 @@ function showSlides(n) {
 }
 
 const form = document.getElementById('formContact')
- form.addEventListener ('submit', function(event) {
+form.addEventListener('submit', function (event) {
   event.preventDefault()
   alert('votre message est envoyé')
 })
- 
+
 // Actualité
 async function getArticles() {
   console.log("getArticles")

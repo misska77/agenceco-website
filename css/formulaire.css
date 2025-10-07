@@ -61,11 +61,12 @@ button {
 }
 
 @media screen and (max-width: 1088px) {
-  
+
 
   .form {
     padding: 30px;
   }
+
   .ficheArticle {
     padding: 10px;
   }
