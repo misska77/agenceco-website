@@ -36,12 +36,6 @@ function showSlides(n) {
   slides[slideIndex - 1].style.display = 'block'
 }
 
-const form = document.getElementById('formContact')
-form.addEventListener('submit', function (event) {
-  event.preventDefault()
-  alert('votre message est envoyé')
-})
-
 // Actualité
 async function getArticles() {
   console.log("getArticles")
