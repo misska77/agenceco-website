@@ -1,9 +1,8 @@
-main {
+.detail-actualite {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 50px 0px 50px 0px;
 }
 
 .conteneur-detail {
@@ -43,4 +42,17 @@ main {
     font-size: 1.3em;
     padding-top: 20px;
     color: white;
+}
+
+.btn-retour {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 60px;
+    border-radius: 30px 30px 30px 30px;
+    background-color: #c8ff00;
+    border: none;
+    font-size: 1.2em;
+    font-weight: 600;
 }
