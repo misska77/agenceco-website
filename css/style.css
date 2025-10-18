@@ -15,7 +15,7 @@ body {
   background-color: white;
   font-family: "Poppins", sans-serif;
   font-weight: 400;
-  font-size: 1em;
+  font-size: 20px;
   display: flex;
   flex-direction: column;
 }
@@ -47,7 +47,7 @@ h1 {
 }
 
 .toggle {
-  font-size: 2.5em;
+  font-size: 43px;
   color: #255919;
   display: none;
 }
@@ -90,13 +90,13 @@ h1 {
 .bienvenue {
   color: white;
   font-weight: 600;
-  font-size: 3.25em;
+  font-size: 52px;
 }
 
 .agence {
   color: #c8ff00;
   font-weight: 700;
-  font-size: 4em;
+  font-size: 64px;
 }
 
 h2 {
@@ -145,13 +145,13 @@ footer {
   justify-content: center;
   text-align: left;
   color: white;
-  font-size: 1.1em;
+  font-size: 18px;
   padding: 0 15px;
   width: 180px;
 }
 
 .titre-rubrique {
-  font-size: 1.5em;
+  font-size: 23px;
   color: white;
   font-weight: 500;
 }
@@ -180,35 +180,51 @@ footer {
 }
 
 .telephone-location div p {
-  font-size: 1em;
+  font-size: 18px;
   color: white;
   text-align: left;
   padding: 0;
+}
+
+.background-copyright {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  width: 100%;
+  background-color: #0c2227;
+  padding: 30px;
 }
 
 .footer-copyright {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #0c2227;
-  padding-top: 30px;
-  padding-bottom: 30px;
+  width: 60%;
 }
 
 .footer-copyright p {
   text-align: left;
-  font-size: 0.96em;
-  font-weight: 300;
+  font-size: 15px;
+  font-weight: 400;
   color: white;
 }
 
-.footer-copyright div {
+.icone-reseau {
+  display: flex;
+  justify-content: right;
+  width: 50%;
+  gap: 40px;
+  color: white;
+}
+
+.icone-reseau div {
   display: flex;
   justify-content: center;
   align-items: center;
-  color: white;
-  font-size: 2.6em;
-  gap: 50px;
+  width: 40px;
+  height: 40px;
+  border: 1px solid white;
+  border-radius: 10px;
 }
 
 .btn-connect {
@@ -221,12 +237,10 @@ footer {
   border: none;
   width: 200px;
   height: 50px;
-  font-size: 1.5em;
+  font-size: 17px;
   font-weight: 500;
   padding: 5px;
 }
-
-
 
 @media screen and (max-width: 1088px) {
 
@@ -266,7 +280,7 @@ footer {
     z-index: 10;
     background-color: white;
     width: 100%;
-    margin-top: 50px;
+    height: 100vh;
     top: 0;
     gap: 80px;
     padding: 80px 0px 80px 0px;
@@ -320,26 +334,36 @@ footer {
     width: 75%;
   }
 
-  .footer-copyright p {
-    padding: 10px;
+  .background-copyright {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
   }
 
   .footer-copyright {
+    display: flex;
     flex-direction: column-reverse;
     justify-content: center;
-    align-items: center;
     width: 100%;
-    padding: 20px;
-    margin: 0;
-    gap: 20px;
+  }
+
+  .footer-copyright p {
+    padding: 10px;
+    text-align: center;
   }
 
   .btn-connect {
-    width: 50%;
+    width: 76%;
     height: 40px;
     background-color: #c8ff00;
     border: none;
     border-radius: 10px;
-    font-size: 1em;
+    font-size: 17px;
+  }
+
+  .icone-reseau {
+    width: 100%;
+    justify-content: center;
   }
 }

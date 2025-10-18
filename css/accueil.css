@@ -10,6 +10,7 @@
   justify-content: center;
   align-items: center;
   text-align: center;
+  height: 390px;
   margin-top: 50px;
   margin-bottom: 30px;
 }
@@ -22,7 +23,7 @@
 }
 
 .nom {
-  font-size: 1.5em;
+  font-size: 25px;
   font-weight: 500;
   color: black;
   padding-top: 15px;
@@ -30,7 +31,7 @@
 }
 
 .presentation {
-  font-size: 1.1em;
+  font-size: 18px;
   color: #868686;
   width: 250px;
   padding: 0;
@@ -52,13 +53,13 @@
   display: flex;
   flex-direction: column;
   color: white;
-  font-size: 1.18em;
+  font-size: 19px;
   font-weight: 600;
   padding: 0;
 }
 
 .nb-clients {
-  font-size: 2.35em;
+  font-size: 44px;
   font-weight: 700;
   color: #c8ff00;
 }
@@ -68,7 +69,6 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  gap: 100px;
 }
 
 .box-services {
@@ -84,14 +84,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 450px;
-  height: 450px;
+  width: 71.5%;
+  height: 448px;
   background-color: #f4f6f5;
   border-radius: 30px 30px 30px 30px;
 }
 
 .box-services p {
-  font-size: 2.5em;
+  font-size: 43px;
   font-weight: 600;
   padding: 10px 0px;
 }
@@ -148,7 +148,7 @@
   background-color: #183a43;
   border-bottom: solid 4px white;
   color: white;
-  font-size: 1.5em;
+  font-size: 20px;
   border-top: none;
   border-left: none;
   border-right: none;
@@ -171,17 +171,18 @@ textarea {
   background-color: #183a43;
   border-bottom: solid 4px white;
   color: white;
-  font-size: 1.5em;
+  font-size: 20px;
   border-top: none;
   border-left: none;
   border-right: none;
 }
 
 .email-message textarea {
-  font-size: 2em;
+  font-size: 20px;
 }
 
-.success, .error {
+.success,
+.error {
   color: white;
   font-size: 20px;
 }
@@ -206,45 +207,62 @@ textarea {
   background-color: #c8ff00;
 }
 
+.conteneur-a-propos {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  gap: 40px;
+  padding: 98px;
+}
+
 .Photo-reunion {
-  width: 50%;
-  height: 400px;
+  width: 58%;
+  height: 405px;
   border-radius: 30px 30px 30px 30px;
   object-fit: cover;
 }
 
-.conteneur-a-propos {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  gap: 35px;
-  padding: 100px;
-}
-
 .cadre-a-propos {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 50%;
-  height: 400px;
+  width: 58%;
+  height: 405px;
   border: 1px solid black;
   border-radius: 10px 10px 10px 10px;
 }
 
+#titre-a-propos {
+  font-size: 25px;
+  font-weight: 600;
+  color: black;
+}
+
 .cadre-a-propos p {
-  font-size: 1.1em;
+  font-size: 18px;
   font-weight: 300;
   color: #868686;
   text-align: center;
   padding: 15px;
 }
 
-#titre-a-propos {
-  font-size: 1.5em;
+.conteneur-cartes {
+  display: flex;
+  justify-content: space-between;
+}
+
+.carte-icone-eco {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 30%;
+  height: 188px;
+}
+
+.carte-icone-eco p {
+  padding-top: 10px;
+  font-size: 18px;
   font-weight: 600;
-  color: black;
+  color: #183a43;
 }
 
 .contour-icone-eco img {
@@ -264,29 +282,6 @@ textarea {
   height: 130px;
   border: 4px solid #183a43;
   border-radius: 50%;
-}
-
-.carte-icone-eco {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 33%;
-}
-
-.carte-icone-eco p {
-  padding-top: 10px;
-  font-size: 1.1em;
-  font-weight: 600;
-  color: #183a43;
-}
-
-.cadre-icone-eco {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px 0;
-  width: 100%;
 }
 
 .conteneur-galerie {
@@ -323,7 +318,8 @@ textarea {
 .next {
   display: flex;
   cursor: pointer;
-  font-size: 1.5em;
+  font-size: 43px;
+  font-weight: 275;
   width: 52px;
   height: 52px;
   border-radius: 50%;
@@ -362,11 +358,11 @@ textarea {
   }
 
   .bienvenue {
-    font-size: 1.5em;
+    font-size: 25px;
   }
 
   .agence {
-    font-size: 1.8em;
+    font-size: 30px;
   }
 
   .conteneur-profils {
@@ -409,7 +405,11 @@ textarea {
   }
 
   .box-services p {
-    font-size: 1.3em;
+    font-size: 23px;
+  }
+
+  .conteneur-contact p {
+    padding: 15px;
   }
 
   .nom-categ,
@@ -437,29 +437,20 @@ textarea {
   }
 
   .conteneur-a-propos {
-    padding: 40px;
+    padding: 15px
   }
 
   .cadre-a-propos {
     width: 100%;
-    height: 200%;
+    height: 805px;
+    margin-top: 20px;
   }
 
-  .cadre-icone-eco {
-    display: flex;
+  .conteneur-cartes {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-  }
-
-  .contour-icone-eco img {
-    width: 80px;
-  }
-
-  .carte-icone-eco p {
-    font-size: 1.5em;
-    margin-top: 5px;
-    margin-bottom: 30px;
+    margin-top: 30px;
   }
 
   .galerieSlides {
@@ -471,7 +462,7 @@ textarea {
   }
 
   .conteneur-galerie p {
-    font-size: 1.2em;
+    font-size: 18px;
     padding: 10px 20px 40px 20px;
   }
 
