@@ -181,7 +181,7 @@ textarea {
   font-size: 2em;
 }
 
-.succes, .error {
+.success, .error {
   color: white;
   font-size: 20px;
 }
