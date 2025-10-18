@@ -181,6 +181,11 @@ textarea {
   font-size: 2em;
 }
 
+.succes, .error {
+  color: white;
+  font-size: 20px;
+}
+
 .bouton-envoyer {
   display: flex;
   justify-content: flex-end;
@@ -192,8 +197,9 @@ textarea {
 
 .bouton-envoyer button {
   width: 15%;
-  height: 60px;
-  font-size: 1.5em;
+  height: 59px;
+  font-family: 'poppins';
+  font-size: 17px;
   font-weight: 500;
   border: none;
   border-radius: 30px 30px 30px 30px;

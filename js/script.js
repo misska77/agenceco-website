@@ -1,18 +1,3 @@
-// Menu burger
-const menu = document.querySelector(".nav-links");
-const btnToggle = document.querySelector(".toggle");
-const iconToggle = document.querySelector(".fa-bars");
-
-btnToggle.onclick = function () {
-  if (iconToggle.classList.contains("fa-bars")) {
-    iconToggle.classList.replace("fa-bars", "fa-times");
-    menu.classList.toggle("hidden");
-  } else {
-    iconToggle.classList.replace("fa-times", "fa-bars");
-    menu.classList.toggle("hidden");
-  }
-}
-
 // slide-Galerie
 let slideIndex = 1;
 showSlides(slideIndex);
@@ -72,7 +57,7 @@ function afficherArticles(listeArticles) {
 
     const content = document.createElement("p")
     content.textContent = article.content
-
+    console.log(content.textContent)
     const publicationDate = document.createElement("p")
     publicationDate.classList.add("date")
     publicationDate.textContent = article.publicationDate

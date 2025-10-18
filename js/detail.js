@@ -1,3 +1,12 @@
+function escapeHTML(text) {
+  return text
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#039;");
+}
+
 // Récupère l'ID depuis l'URL
 const params = new URLSearchParams(window.location.search);
 const id = params.get("id");
@@ -11,12 +20,13 @@ if (id) {
 
     .then(article => {
       const container = document.getElementById("detail-container");
+      console.log(article)
       container.innerHTML = `
-            <h3>${article.title}</h3>
-            <p><strong>Date :</strong> ${article.publicationDate}</p>
+            <h3>${escapeHTML(article.title)}</h3>
+            <p><strong>Date :</strong> ${escapeHTML(article.publicationDate)}</p>
             <img src="" alt="" class="">
-            <p>${article.content}<p>
-          `;
+            <p>${escapeHTML(article.content)}<p>
+          `
     })
 
     .catch(err => {
