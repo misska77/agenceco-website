@@ -1,30 +1,28 @@
-const form = document.querySelector("form")
-form.addEventListener("submit", async function postLogin(event) {
-    event.preventDefault()
-    const email = document.getElementById("email").value
-    const password = document.getElementById("password").value
-    try {
-        const response = await fetch("http://localhost:3000/login", {
-            method: "POST",
-            headers: {
-                "accept": "application/json",
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({ email, password })
-        })
+// login.js
+const form = document.querySelector("form");
 
-        const data = await response.json()
+form.addEventListener("submit", async (e) => {
+  e.preventDefault();
 
-        if (response.ok) {
-            console.log(data.token)
-            localStorage.setItem("token", data.token)
-            window.location.href = "blog.html"
-        } else {
-            alert("Erreur : " + (data.message || "identifiants invalides"))
-        }
+  const email = document.querySelector("#email").value;
+  const password = document.querySelector("#password").value;
 
-    } catch (error) {
-        console.error("Erreur lors de la requête :", error)
-        alert("Impossible de se connecter au serveur")
-    }
-})
+  try {
+    const response = await fetch("http://localhost:3000/login", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ email, password }),
+    });
+
+    if (!response.ok) throw new Error("Erreur de connexion");
+
+    const data = await response.json();
+
+    // l'API renvoi un token
+    localStorage.setItem("user", JSON.stringify(data)); // on garde en mémoire l’utilisateur
+    window.location.href = "blog.html"; // redirection
+  } catch (error) {
+    alert("Échec de la connexion : " + error.message);
+  }
+});
+

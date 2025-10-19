@@ -55,7 +55,7 @@
   margin: 6px 0;
 }
 
-.pied-fiche {
+.article-footer {
   display: flex;
   width: 100%;
   gap: 12px;
@@ -66,7 +66,7 @@
   flex-wrap: wrap;
 }
 
-.pied-fiche .date {
+.article-footer .date {
   flex: 1 1 auto;
   min-width: 140px;
   margin: 0;
@@ -84,7 +84,7 @@
 }
 
 .actions button,
-.pied-fiche button {
+.article-footer button {
   padding: 8px 12px;
   border: none;
   border-radius: 6px;
@@ -95,12 +95,12 @@
   width: 110px;
 }
 
-.btn-modifier {
+.btn-edit {
   background-color: orange;
   color: white;
 }
 
-.btn-supprimer {
+.btn-delete {
   background-color: red;
   color: white;
 }
@@ -130,13 +130,13 @@
     padding: 8px;
   }
 
-  .pied-fiche {
+  .article-footer {
     flex-direction: column;
     align-items: stretch;
     gap: 10px;
   }
 
-  .pied-fiche .date {
+  .article-footer .date {
     width: 100%;
     text-align: center;
   }
