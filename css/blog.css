@@ -1,23 +1,30 @@
-#newslist {
+#newsList {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 100%;
 }
 
-.btn-ajouter {
-  width: 100%;
-  max-width: 350px;
-  padding: 10px 16px;
+#zone-bouton-ajout {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  height: 63px;
+}
+
+.btn-ajout {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  height: 63px;
   background-color: #c8ff00;
   color: black;
   border: none;
-  border-radius: 6px;
+  border-radius: 10px;
   cursor: pointer;
-  font-weight: 500;
-  font-size: 1.1rem;
-  margin-bottom: 30px;
+  font-size: 32px;
 }
 
 .conteneurActualites {
@@ -27,7 +34,7 @@
   align-items: center;
   gap: 20px;
   width: 100%;
-  margin-bottom: 30px;
+  margin: 50px 0px;
 }
 
 .ficheArticle {
@@ -85,14 +92,17 @@
 
 .actions button,
 .article-footer button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   padding: 8px 12px;
   border: none;
   border-radius: 6px;
-  font-weight: 600;
-  font-size: 0.95rem;
+  font-weight: 700;
+  font-size: 19px;
   cursor: pointer;
   flex: 0 1 auto;
-  width: 110px;
+  width: 15%;
 }
 
 .btn-edit {
@@ -106,8 +116,17 @@
 }
 
 @media screen and (max-width: 1088px) {
-  .btn-ajouter {
-    width: 80%;
+
+  #zone-bouton-ajout {
+    width: 100%;
+    height: 45px;
+  }
+
+  .btn-ajout {
+    width: 90%;
+    height: 45px;
+    font-size: 20px;
+    font-weight: 500;
   }
 
   .ficheArticle {
@@ -120,35 +139,35 @@
   }
 
   .ficheArticle h3 {
-    font-size: 1.3em;
+    font-size: 26px;
     padding: 15px;
     text-align: center;
   }
 
   .ficheArticle p {
-    font-size: 1.1em;
+    font-size: 20px;
     padding: 8px;
   }
 
   .article-footer {
-    flex-direction: column;
-    align-items: stretch;
+    justify-content: center;
     gap: 10px;
   }
 
   .article-footer .date {
-    width: 100%;
-    text-align: center;
+    display: none;
   }
+
+.actions button,
+.article-footer button {
+  width: 47%;
+  height: 29px;
+  font-size: 17px;
+}
 
   .actions {
     width: 100%;
     justify-content: space-between;
-  }
-
-  .actions button {
-    flex: 1 1 48%;
-    min-width: 0;
   }
 
   .actions button.fullwidth {

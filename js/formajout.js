@@ -28,7 +28,7 @@ document.getElementById("formAjoutArticle").addEventListener("submit", async fun
 
   await ajouterArticle(titre, description, contenu)
 
-  window.location.href = "blog.html"
+  window.location.href = "actualites.html"
 
 });
 
