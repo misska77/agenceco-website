@@ -15,14 +15,16 @@ form.addEventListener("submit", async (e) => {
     });
 
     if (!response.ok) throw new Error("Erreur de connexion");
-
+    
     const data = await response.json();
+    
 
     // l'API renvoi un token
     localStorage.setItem("user", JSON.stringify(data)); // on garde en mémoire l’utilisateur
-    window.location.href = "blog.html"; // redirection
+    window.location.href = "actualites.html"; // redirection
   } catch (error) {
     alert("Échec de la connexion : " + error.message);
   }
+
 });
 
