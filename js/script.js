@@ -7,11 +7,12 @@ function plusSlides(n) {
   showSlides(slideIndex += n);
 }
 
-function showSlides(numeroSlide) {
+function showSlides(n) {
+  let i;
   let slides = document.getElementsByClassName("galerieSlides");
 
-  if (numeroSlide > slides.length) { slideIndex = 1 }
-  if (numeroSlide < 1) { slideIndex = slides.length }
+  if (n > slides.length) { slideIndex = 1 }
+  if (n < 1) { slideIndex = slides.length }
 
   for (let i = 0; i < slides.length; i++) {
     slides[i].style.display = "none"
@@ -39,7 +40,7 @@ function afficherArticles(listeArticles) {
 
   for (let i = 0; i < listeArticles.length; i++) {
     const article = listeArticles[i];
-  // creation du lien pour aller vers la page de detail
+
     const lien = document.createElement('a');
     lien.href = `detail.html?id=${article.id}`;
     lien.classList.add("ficheArticle");
