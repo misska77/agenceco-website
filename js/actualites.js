@@ -1,18 +1,19 @@
+//recupereration des actualités de l'API
 async function getArticles() {
   console.log("getArticles")
   let response = await fetch("http://localhost:3000/articles");
-  let listeArticles = await response.json();
-  if (response.ok === true) {
-    return listeArticles;
+  
+  let listeArticles = await response.json(); //on ne souhaite que les informations JSON pour la reponse
+  if (response.ok === true) { // si serveur accessible
+    return listeArticles;// le serveur retourne la liste des articles
   }
-  throw new Error('Impossible de contacter le serveur')
+  throw new Error('Impossible de contacter le serveur') // ou alors on affiche un message d'erreur
 }
 
+// fontion pour afficher les articles et leur structure
 function afficherArticles(listeArticles) {
-  const divConteneurActualites = document.querySelector('.conteneurActualites');
-  const user = JSON.parse(localStorage.getItem("user"));
-
-  divConteneurActualites.innerHTML = '';
+  const divConteneurActualites = document.querySelector('.conteneurActualites');// on récupère le conteneur Actualites
+  const user = JSON.parse(localStorage.getItem("user"));// on récupère la donnée user dans le localStorage
 
   for (let i = 0; i < listeArticles.length; i++) {
     const article = listeArticles[i];
