@@ -21,17 +21,6 @@ function showSlides(n) {
   slides[slideIndex - 1].style.display = 'block'
 }
 
-// Actualité
-async function getArticles() {
-  console.log("getArticles")
-  let response = await fetch("http://localhost:3000/articles");
-  let listeArticles = await response.json();
-  if (response.ok === true) {
-    return listeArticles;
-  }
-  throw new Error('Impossible de contacter le serveur')
-}
-
 function afficherArticles(listeArticles) {
   const divConteneurActualites = document.querySelector('.conteneurActualites')
   console.log("afficherArticles")
