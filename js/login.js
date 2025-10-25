@@ -14,7 +14,7 @@ async function loginUser(email, password) {//prise en compte de 2 paramètre ema
     // Sauvegarde l'utilisateur dans le localStorage
     localStorage.setItem("user", JSON.stringify(data));
 
-    window.location.href = "actualites.html"; // redirection
+    window.location.href = "blog.html"; // redirection
   } catch (error) {
     alert("Échec de la connexion : " + error.message);
   }
@@ -26,7 +26,7 @@ function gererLoginForm(formSelector) {
   const form = document.querySelector(formSelector);
 
   if (!form) {
-    console.error("⚠️ Aucun formulaire trouvé avec le sélecteur :", formSelector);
+    console.error("Aucun formulaire trouvé :", formSelector);
     return;
   }
 
