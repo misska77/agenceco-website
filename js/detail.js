@@ -19,22 +19,21 @@ if (id) {
     })
 
     .then(article => {
-      const container = document.getElementById("detail-container");
+      const container = document.getElementById("detail-conteneur");
       console.log(article)
       container.innerHTML = `
             <h3>${escapeHTML(article.title)}</h3>
             <p><strong>Date :</strong> ${escapeHTML(article.publicationDate)}</p>
-            <img src="" alt="" class="">
             <p>${escapeHTML(article.content)}<p>
           `
     })
 
     .catch(err => {
       console.error(err);
-      document.getElementById("detail-container").textContent = "Erreur : impossible de charger l'article.";
+      document.getElementById("detail-conteneur").textContent = "Erreur : impossible de charger l'article.";
     });
 
 } else {
-  document.getElementById("detail-container").textContent = "Aucun article sélectionné.";
+  document.getElementById("detail-conteneur").textContent = "Aucun article sélectionné.";
 }
 
