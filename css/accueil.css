@@ -224,6 +224,8 @@ textarea {
 }
 
 .cadre-a-propos {
+  display: flex;
+  flex-direction: column;
   width: 58%;
   height: 405px;
   border: 1px solid black;
@@ -259,6 +261,7 @@ textarea {
 }
 
 .carte-icone-eco p {
+  height: 80px;
   padding-top: 10px;
   font-size: 18px;
   font-weight: 600;
