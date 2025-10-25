@@ -1,34 +1,24 @@
-async function ajouterArticle(title, description, content) {
+//
+document.addEventListener("DOMContentLoaded", () => {
+  document.getElementById("formAjoutArticle").addEventListener("submit", async (event) => {
+    event.preventDefault();//on empeche le rechargement de la page
 
-  const response = await fetch("http://localhost:3000/articles", {
-    method: "POST",
-    headers: {
-      "accept": "application/json",
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify({ title, description, content })
-  })
+    const titre = document.getElementById("title").value.trim();
+    const description = document.getElementById("description").value.trim();
+    const contenu = document.getElementById("content").value.trim();
 
-  const data = await response.json()
-}
+    if (!titre || !description || !contenu) {
+      alert("Veuillez remplir tous les champs.");
+      return;
+    }
 
-// formulaire et stockage des données
-document.getElementById("formAjoutArticle").addEventListener("submit", async function (event) {
-  event.preventDefault()
-  const titre = document.getElementById("title").value;
-  const description = document.getElementById("description").value;
-  const contenu = document.getElementById("content").value;
-
-  if (!titre || !description || !contenu) {
-    alert("Veuillez remplir tous les champs.");
-    return;
-  }
-
-  console.log(titre, description, contenu)
-
-  await ajouterArticle(titre, description, contenu)
-
-  window.location.href = "actualites.html"
-
+    try {
+      await ajouterArticle(titre, description, contenu);
+      alert("Article ajouté");
+      window.location.href = "blog.html";
+    } catch (error) {
+      alert("Erreur : " + error.message);
+    }
+  });
 });
 

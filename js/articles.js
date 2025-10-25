@@ -128,3 +128,73 @@ async function main(page = "index") {
   }
 }
 
+// gestion du formulaire ajout et modif
+
+// Récupérer un paramètre d'URL 
+function getUrlParam(paramName) {
+  const params = new URLSearchParams(window.location.search);
+  return params.get(paramName);
+}
+
+// Récupérer un article précis par son id
+async function getArticle(id) {
+  const token = localStorage.getItem("token"); //récuperation du token
+
+  const response = await fetch(`http://localhost:3000/articles/${id}`, {
+    headers: { "Authorization": `Bearer ${token}` }
+  });
+
+  const article = await response.json();
+  if (!response.ok) throw new Error(article.message || "Impossible de charger l'article");
+
+  return article;
+}
+
+// Ajouter un article
+async function ajouterArticle(titre, description, contenu) {
+  const token = localStorage.getItem("token");
+
+  const response = await fetch(`http://localhost:3000/articles`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      "Authorization": `Bearer ${token}`
+    },
+    body: JSON.stringify({
+      title: titre,
+      description: description,
+      content: contenu,
+      publicationDate: new Date().toISOString().split("T")[0]
+    })
+  });
+
+  const result = await response.json();
+  if (!response.ok) throw new Error(result.message || "Erreur lors de l'ajout de l'article");
+
+  return result;
+}
+
+// Modifier un article existant
+async function modifierArticle(id, titre, description, contenu) {
+  const token = localStorage.getItem("token");
+
+  const response = await fetch(`http://localhost:3000/articles/${id}`, {
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json",
+      "Authorization": `Bearer ${token}`
+    },
+    body: JSON.stringify({
+      title: titre,
+      description: description,
+      content: contenu
+    })
+  });
+
+  const result = await response.json();
+  if (!response.ok) throw new Error(result.message || "Erreur lors de la mise à jour");
+
+  return result;
+}
+
+
