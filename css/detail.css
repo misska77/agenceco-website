@@ -62,4 +62,12 @@
     .conteneur-detail h3 {
         font-size: 26px;
     }
+    
+    .conteneur-detail p {
+        padding: 8px;
+    }
+
+    .conteneur-detail {
+        padding: 8px;
+    }
 }

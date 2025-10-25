@@ -58,6 +58,10 @@
 
     @media screen and (max-width: 1088px) {
 
+        .conteneur-login h2 {
+            margin: 20px 0px 20px 0px;
+        }
+
         #email,
         #password {
             width: 90%;
