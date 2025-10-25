@@ -175,7 +175,7 @@ async function ajouterArticle(titre, description, contenu) {
 }
 
 // Modifier un article existant
-async function modifierArticle(id, titre, description, contenu) {
+async function modifierArticleServeur(id, titre, description, contenu) {
   const token = localStorage.getItem("token");
 
   const response = await fetch(`http://localhost:3000/articles/${id}`, {
