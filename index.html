@@ -17,7 +17,7 @@
   <link href="css/accueil.css" rel="stylesheet">
   <link href="css/blog.css" rel="stylesheet">
   <script src="js/menu.js" defer></script>
-  <script src="js/contact.js"defer></script>
+  <script src="js/contact.js" defer></script>
 </head>
 
 <body>
@@ -70,14 +70,14 @@
           <p class="presentation">Consectetur adipisicing elit. Donec sed leo in nisi vehicula bibendum</p>
         </div>
       </div>
-
-      <div class="bandeau-satisfaction-clients" id="temoignages">
-        <p><span class="nb-clients">2500</span>Clients satisfaits</p>
-        <p><span class="nb-clients">2500</span>Clients satisfaits</p>
-        <p><span class="nb-clients">2500</span>Clients satisfaits</p>
-        <p><span class="nb-clients">2500</span>Clients satisfaits</p>
-      </div>
     </section>
+    <div class="bandeau-satisfaction-clients" id="temoignages">
+      <p><span class="nb-clients">2500</span>Clients satisfaits</p>
+      <p><span class="nb-clients">2500</span>Clients satisfaits</p>
+      <p><span class="nb-clients">2500</span>Clients satisfaits</p>
+      <p><span class="nb-clients">2500</span>Clients satisfaits</p>
+    </div>
+
     <section id="conteneur-nos-services">
       <h2 id="services">Nos services</h2>
       <div class="conteneur-services">
@@ -99,8 +99,8 @@
       <h2>Dernières Actualités</h2>
       <div class="conteneurActualites">
       </div>
-      <script src="js/articles.js"defer></script>
-      <script src="js/script.js"defer></script>
+      <script src="js/articles.js" defer></script>
+      <script src="js/script.js" defer></script>
     </section>
     <section id="conteneur-contactez-nous">
       <div class="conteneur-contact">
@@ -161,17 +161,23 @@
         <h2>Notre galerie</h2>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Donec sed leo in nisi vehicula bidendum. Aliquam
           sit amet blandit nisi, sodales molestie.</p>
-        <div class="galerieSlides">
-          <img src="resources/kevin-bhagat-zNRITe8NPqY-unsplash1.jpg" alt="photo reunion" id="img1">
-        </div>
-        <div class="galerieSlides">
-          <img src="resources/jason-goodman-Oalh2MojUuk-unsplash1.jpg" alt="photo de bureau" id="img2">
+        <div class="Slider">
+          <div class="slides">
+            <div class="slide">
+              <img src="resources/kevin-bhagat-zNRITe8NPqY-unsplash1.jpg" alt="photo reunion" id="img1">
+            </div>
+            <div class="slide">
+              <img src="resources/jason-goodman-Oalh2MojUuk-unsplash1.jpg" alt="photo de bureau" id="img2">
+            </div>
+            <div class="slide"><img src="resources/rodion-kutsaev-049M_crau5k-unsplash 1.jpg" alt="img3">
+            </div>
+          </div>
         </div>
         <div class="btn-slide">
-          <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-          <a class="next" onclick="plusSlides(1)">&#10095;</a>
+          <button class="prev">&#10094;</button>
+          <button class="next">&#10095;</button>
         </div>
-      </div>
+
     </section>
   </main>
   <footer>
