@@ -1,12 +1,27 @@
-// slide-Galerie
-let slideIndex = 1;
-showSlides(slideIndex);
+//slide galerie
 
-// controle bouton chevron
-function plusSlides(n) {
-  showSlides(slideIndex += n);
+//recuperation des 2 boutons chevron
+const prev = document.getElementById('prev');
+const next = document.getElementById('next');
+const slides = document.getElementById('slides');
+
+let slide = 0 // on cree une variable qui dit que le début de l'animation part de la slide 
+
+prev.addEventListener('click', () => {   // On écoute le bouton "precedent" au clic 
+  slide = slide - 1 // slide -1 pour revenir sur la slide précedente
+  changeSlide(); //on appelle la fonction
+})
+
+next.addEventListener('click', () => {   // On écoute le bouton "suivant" au clic
+  slide =slide + 1  // slide + 1  pour passer à la slide suivante
+  changeSlide(); //on appelle la fonction 
+})
+
+// création de la fonction pour changer de slide 
+function changeSlide() {
+slides.style.transform = 'translateX(-' + (slide*100) + '%)'; //on décale l'image cachée suivante ou precedente pour qu'elle s'affiche en position 0  
 }
- 
+
 
 function afficherArticles(listeArticles) {
   const divConteneurActualites = document.querySelector('.conteneurActualites')
