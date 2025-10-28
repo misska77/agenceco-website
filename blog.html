@@ -41,12 +41,14 @@
   <main>
     <section id="newsList">
       <h2>Nos actualités</h2>
-      <div id="zone-bouton-ajout"></div>
+      <div id="zone-bouton-ajout" class="zone-bouton-ajout"></div>
       <div class="conteneurActualites"></div>
     </section>
     <script src="js/articles.js"></script>
     <script>
-      main("blog");
+      document.addEventListener("DOMContentLoaded", () => {
+        main("blog"); // dynamisation des articles selon page Blog
+      });
     </script>
   </main>
   <footer>

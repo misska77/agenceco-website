@@ -19,8 +19,10 @@ function afficherArticles(listeArticles, options = {}) {
   divConteneur.innerHTML = '';
 
   listeArticles.forEach(article => {
-    const card = document.createElement('div');
-    card.classList.add("ficheArticle");
+    const lien = document.createElement('a');
+    lien.href = `detail.html?id=${article.id}`;
+    lien.classList.add("ficheArticle");
+    lien.style.display = "block"; // permet quer toute la carte soit cliquable
 
     const title = document.createElement("h3");
     title.textContent = article.title;
@@ -39,24 +41,32 @@ function afficherArticles(listeArticles, options = {}) {
     date.textContent = "Publié le " + article.publicationDate;
     footer.appendChild(date);
 
-    // Si on est sur blog.html & utilisateur connecté → afficher boutons
+    // Si on est sur la page blog.html & utilisateur connecté → afficher boutons
     if (options.afficherBoutons && user) {
       const btnEdit = document.createElement("button");
       btnEdit.textContent = "Modifier";
       btnEdit.classList.add("btn-edit");
-      btnEdit.addEventListener("click", () => modifierArticle(article.id));
+      btnEdit.addEventListener("click", (e) => {
+        e.preventDefault();
+        e.stopPropagation();// empêche la propagation du clic vers le <a>
+        modifierArticle(article.id);
+      });
 
       const btnDelete = document.createElement("button");
       btnDelete.textContent = "Supprimer";
       btnDelete.classList.add("btn-delete");
-      btnDelete.addEventListener("click", () => supprimerArticle(article.id));
+      btnDelete.addEventListener("click", (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        supprimerArticle(article.id);
+      });
 
       footer.appendChild(btnEdit);
       footer.appendChild(btnDelete);
     }
 
-    card.append(title, description, content, footer);
-    divConteneur.appendChild(card);
+    lien.append(title, description, content, footer);
+    divConteneur.appendChild(lien);
   });
 }
 
@@ -104,7 +114,7 @@ function modifierArticle(id) {
   window.location.href = `formmodif.html?id=${id}`;
 }
 
-// Fonction principale (appelée selon la page)
+// Fonction principale (appelée selon la page index ou blog)
 async function main(page = "index") {
   try {
     let articles = await getArticles();
