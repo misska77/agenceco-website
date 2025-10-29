@@ -35,7 +35,7 @@
         <a href="#services">Nos services</a>
         <a href="#temoignages">Témoignages</a>
         <a href="#contact">Contactez nous</a>
-        <a href="blog.html#newsList">Actualités</a>
+        <a href="#newsList">Actualités</a>
       </div>
     </nav>
   </header>
@@ -80,7 +80,8 @@
         <p><span class="nb-clients">2500</span>Clients satisfaits</p>
         <p><span class="nb-clients">2500</span>Clients satisfaits</p>
       </div>
-    </section><!--conteneur des services proposés à relier ultérieurement avec création de la page Nos services (voir maquette créée)-->
+    </section>
+    <!--conteneur des services proposés à relier ultérieurement avec création de la page Nos services (voir maquette créée)-->
     <section id="conteneur-nos-services">
       <h2 id="services">Nos services</h2>
       <div class="conteneur-services">
@@ -102,10 +103,14 @@
       <h2>Dernières Actualités</h2>
       <div class="conteneurActualites">
       </div>
-      <script src="js/articles.js" defer></script><!--lien vers articles.js (CRUD) pour la récupération et l'affichage des articles -->
-      <script src="js/script.js" defer></script><!--lien pour l'opération de calcul afficher uniquement 3 derniers articles-->
+      <script src="js/articles.js" defer></script><!--lien vers articles.js (CRUD) pour récupération et affichage des articles-->
+      <script>
+        document.addEventListener("DOMContentLoaded", () => {
+          main("index");
+        });
+      </script>
     </section>
-    <section id="conteneur-contactez-nous"><!--conteneur contenant le formulaire de contact--> 
+    <section id="conteneur-contactez-nous"><!--conteneur contenant le formulaire de contact-->
       <div class="conteneur-contact">
         <h2 id="contact">Contactez-nous</h2>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Donec sed leo in.</p>
@@ -120,7 +125,8 @@
             <input type="tel" id="telephone" name="telephone" placeholder="Téléphone" required>
             <input type="text" id="ville" name="ville" placeholder="Ville" required>
           </div>
-          <div class="email-message"><!--div pour ligne 3 et 4 du formulaire avec textaera pour la partie message pouvant contenir 5 lignes-->
+          <div class="email-message">
+            <!--div pour ligne 3 et 4 du formulaire avec textaera pour la partie message pouvant contenir 5 lignes-->
             <input type="email" id="email" name="email" placeholder="E-mail" required>
             <textarea id="message" name="message" rows="5" placeholder="Message" required></textarea>
           </div>
