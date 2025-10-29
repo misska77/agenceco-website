@@ -48,7 +48,7 @@ function afficherArticles(listeArticles, options = {}) {
       btnEdit.classList.add("btn-edit");
       btnEdit.addEventListener("click", (e) => {
         e.preventDefault();
-        e.stopPropagation();// empêche la propagation du clic vers le <a>
+        e.stopPropagation();// empêche la propagation du clic vers le lien <a>
         modifierArticle(article.id);
       });
 
@@ -92,18 +92,18 @@ function afficherBoutonAjout() {
 // Supprimer un article
 async function supprimerArticle(id) {
   const confirmation = confirm("Voulez-vous vraiment supprimer cet article ?");
-  if (!confirmation) return;
+  if (!confirmation) return;//demande de confirmation de suppression
 
-  const token = localStorage.getItem("token");
+  const token = localStorage.getItem("token"); //récuperation du token dans le localstorage
   try {
-    const response = await fetch(`http://localhost:3000/articles/${id}`, {
+    const response = await fetch(`http://localhost:3000/articles/${id}`, { // on récupère l'id de l'article
       method: "DELETE",
-      headers: { "Authorization": `Bearer ${token}` }
+      headers: { "Authorization": `Bearer ${token}` } //si token ok on déclanche la suppression
     });
     if (!response.ok) throw new Error("Erreur lors de la suppression");
 
     alert("Article supprimé !");
-    location.reload();
+    location.reload();//rechargement page 
   } catch (error) {
     alert("Erreur : " + error.message);
   }

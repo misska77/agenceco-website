@@ -18,11 +18,12 @@
   <link href="css/login.css" rel="stylesheet">
   <link href="css/style.css" rel="stylesheet">
   <script src="js/menu.js" defer></script>
+  <script src="js/login.js" defer></script>
 </head>
 
 <body>
   <header> 
-    <nav class="navbar"><!--Nav bar interactive-->
+    <nav class="navbar"><!--Nav bar-->
       <div class="logo-toggle">
         <h1>Agenc<span class="eco">eco</span></h1>
         <div class="toggle">
@@ -43,13 +44,12 @@
     <div class="conteneur-login"> <!--Formulaire de connexion utilisateur-->
       <h2>Connexion</h2>
       <p>Pour voir les actualités, merci de vous connecter</p>
-      <form>
+      <form><!--Pas de label car placeholder dans input gestion du formulaire via contact.js-->
         <input type="email" id="email" name="email" placeholder="E-mail" required>
         <input type="password" id="password" name="password" placeholder="Mot de passe" required>
         <button type="submit" id="btn-connexion">Me connecter</button>
       </form>
     </div>
-    <script src="js/login.js" defer></script>
   </main>
   <footer><!--pied de page-->
     <div class="footer-link">

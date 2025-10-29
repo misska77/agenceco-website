@@ -18,6 +18,7 @@
   <link href="css/blog.css" rel="stylesheet"><!--lien pour le style du formulaire-->
   <script src="js/menu.js" defer></script><!--lien pour l'interaction du menu hamburger-->
   <script src="js/contact.js" defer></script><!--lien pour l'interaction du formulaire-->
+  <script src="js/articles.js" defer></script><!--lien vers articles.js (CRUD) pour récupération et affichage des articles-->
 </head>
 
 <body>
@@ -49,7 +50,7 @@
         <img src="resources/rodion-kutsaev-049M_crau5k-unsplash 1.jpg" alt="backgroud-feuilles"
           class="image-background">
       </div>
-    </section><!--conteneur qui présente l'équipe-->
+    </section><!--conteneur notre équipe-->
     <section id="Conteneur-notre-equipe">
       <h2 id="notre-equipe">Notre équipe</h2>
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Donec sed leo in nisi vehicula bidendum. Aliquam
@@ -81,7 +82,7 @@
         <p><span class="nb-clients">2500</span>Clients satisfaits</p>
       </div>
     </section>
-    <!--conteneur des services proposés à relier ultérieurement avec création de la page Nos services (voir maquette créée)-->
+    <!--conteneur des services proposés à relier ultérieurement à la page Nos services (voir maquette créée)-->
     <section id="conteneur-nos-services">
       <h2 id="services">Nos services</h2>
       <div class="conteneur-services">
@@ -103,7 +104,6 @@
       <h2>Dernières Actualités</h2>
       <div class="conteneurActualites">
       </div>
-      <script src="js/articles.js" defer></script><!--lien vers articles.js (CRUD) pour récupération et affichage des articles-->
       <script>
         document.addEventListener("DOMContentLoaded", () => {
           main("index");
@@ -130,7 +130,7 @@
             <input type="email" id="email" name="email" placeholder="E-mail" required>
             <textarea id="message" name="message" rows="5" placeholder="Message" required></textarea>
           </div>
-          <div class="error" id="errorMsg">
+          <div class="error" id="errorMsg"> 
           </div>
           <div class="bouton-envoyer">
             <button type="submit" id="bouton-envoyer">Envoyer</button>
@@ -138,14 +138,14 @@
         </form>
       </div>
     </section>
-    <section id="conteneur-a-propos-de-nous">
+    <section id="conteneur-a-propos-de-nous"><!--Conteneur présentation de l'agence-->
       <div class="conteneur-a-propos">
         <img src="resources/jason-goodman-Oalh2MojUuk-unsplash1.jpg" alt="photo de reunion" class="Photo-reunion">
         <div class="cadre-a-propos">
           <p id="titre-a-propos">A propos de nous</p>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Donec sed leo in adipiscing</p>
           <div class="conteneur-cartes">
-            <div class="carte-icone-eco">
+            <div class="carte-icone-eco"><!--système de carte pour le conteneur a propos-->
               <div class="contour-icone-eco">
                 <img src="resources/Vector-2.jpg" alt="icone-mapmonde" class="icone-mapmonde">
               </div>
@@ -166,7 +166,7 @@
           </div>
         </div>
       </div>
-      <div class="conteneur-galerie">
+      <div class="conteneur-galerie"><!--Conteneur galerie avec interaction type slider gerer par script.js-->
         <h2>Notre galerie</h2>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Donec sed leo in nisi vehicula bidendum. Aliquam
           sit amet blandit nisi, sodales molestie.</p>
@@ -183,17 +183,17 @@
           </div>
         </div>
         <div class="btn-navigation">
-          <div class="btn-slide">
+          <div class="btn-slide"><!--bouton precedent-->
             <button id="prev">&#10094;</button>
           </div>
-          <div class="btn-slide">
+          <div class="btn-slide"><!--bouton suivant-->
             <button id="next">&#10095;</button>
           </div>
         </div>
 
     </section>
   </main>
-  <footer>
+  <footer><!--Pied de page en 2 blocs un bloc rubriques et un bloc Copyright-->
     <div class="footer-link">
       <div class="bloc-rubriques">
         <div class="rubriques">
@@ -224,7 +224,7 @@
         </div>
       </div>
     </div>
-    <div class="background-copyright">
+    <div class="background-copyright"><!--bloc Copyright avec icone login renvoyant sur la page du formulaire de connexion-->
       <div class="footer-copyright">
         <p>copyright - 2021 AGENCEECO - All rigthreserved</p>
         <a class="btn-connect" href="login.html">Me connecter</a>
