@@ -22,45 +22,6 @@ function changeSlide() {
 slides.style.transform = 'translateX(-' + (slide*100) + '%)'; //on décale l'image cachée suivante ou precedente pour qu'elle s'affiche en position 0  
 }
 
-
-function afficherArticles(listeArticles) {
-  const divConteneurActualites = document.querySelector('.conteneurActualites')
-  console.log("afficherArticles")
-
-  divConteneurActualites.innerHTML = '';
-
-  for (let i = 0; i < listeArticles.length; i++) {
-    const article = listeArticles[i];
-
-    const lien = document.createElement('a');
-    lien.href = `detail.html?id=${article.id}`;
-    lien.classList.add("ficheArticle");
-    lien.style.display = "block"
-
-    const divFicheArticle = document.createElement('div')
-    divFicheArticle.classList.add("ficheArticle")
-
-    const title = document.createElement("h3")
-    title.textContent = article.title
-
-    const description = document.createElement("p")
-    description.textContent = article.description
-
-    const content = document.createElement("p")
-    content.textContent = article.content
-    console.log(content.textContent)
-    const publicationDate = document.createElement("p")
-    publicationDate.classList.add("date")
-    publicationDate.textContent = article.publicationDate
-
-    divConteneurActualites.appendChild(lien)
-    lien.appendChild(title)
-    lien.appendChild(description)
-    lien.appendChild(content)
-    lien.appendChild(publicationDate)
-  }
-}
-
 async function main() {
   console.log("appel de la fonction main");
   try {

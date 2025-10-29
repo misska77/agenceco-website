@@ -13,16 +13,16 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
     integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
     crossorigin="anonymous" referrerpolicy="no-referrer">
-  <link href="css/style.css" rel="stylesheet">
-  <link href="css/accueil.css" rel="stylesheet">
-  <link href="css/blog.css" rel="stylesheet">
-  <script src="js/menu.js" defer></script>
-  <script src="js/contact.js" defer></script>
+  <link href="css/style.css" rel="stylesheet"><!--lien pour le style du header et footer identique a toutes les pages-->
+  <link href="css/accueil.css" rel="stylesheet"><!--lien pour le style du main-->
+  <link href="css/blog.css" rel="stylesheet"><!--lien pour le style du formulaire-->
+  <script src="js/menu.js" defer></script><!--lien pour l'interaction du menu hamburger-->
+  <script src="js/contact.js" defer></script><!--lien pour l'interaction du formulaire-->
 </head>
 
 <body>
   <header>
-    <nav class="navbar" id="start">
+    <nav class="navbar" id="start"><!--Navbar-->
       <div class="logo-toggle">
         <h1>Agenc<span class="eco">eco</span></h1>
         <div class="toggle">
@@ -35,26 +35,28 @@
         <a href="#services">Nos services</a>
         <a href="#temoignages">Témoignages</a>
         <a href="#contact">Contactez nous</a>
-        <a href="#newsList">Actualités</a>
+        <a href="blog.html#newsList">Actualités</a>
       </div>
     </nav>
   </header>
-
-  <div class="titre-conteneur">
-    <div class="titre">
-      <span class="bienvenue">Bienvenue dans votre</span><br>
-      <span class="agence">agence web écologique</span>
-    </div>
-    <img src="resources/rodion-kutsaev-049M_crau5k-unsplash 1.jpg" alt="backgroud-feuilles" class="image-background">
-  </div>
   <main>
+    <section><!--conteneur image background accueil-->
+      <div class="titre-conteneur">
+        <div class="titre">
+          <span class="bienvenue">Bienvenue dans votre</span><br>
+          <span class="agence">agence web écologique</span>
+        </div>
+        <img src="resources/rodion-kutsaev-049M_crau5k-unsplash 1.jpg" alt="backgroud-feuilles"
+          class="image-background">
+      </div>
+    </section><!--conteneur qui présente l'équipe-->
     <section id="Conteneur-notre-equipe">
       <h2 id="notre-equipe">Notre équipe</h2>
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Donec sed leo in nisi vehicula bidendum. Aliquam
         sit amet blandit nisi, sodales molestie.
       </p>
-      <div class="conteneur-profils">
-        <div class="carte-profil">
+      <div class="conteneur-profils"><!--conteneur contenant les cartes des profils-->
+        <div class="carte-profil"><!--système de carte pour chaque profil-->
           <img src="resources/image1.jpg" alt="Photo-Julie Dupond" class="photo-portrait">
           <p class="nom">Julie Dupond</p>
           <p class="presentation">Consectetur adipisicing elit. Donec sed leo in nisi vehicula bibendum</p>
@@ -71,13 +73,14 @@
         </div>
       </div>
     </section>
-    <div class="bandeau-satisfaction-clients" id="temoignages">
-      <p><span class="nb-clients">2500</span>Clients satisfaits</p>
-      <p><span class="nb-clients">2500</span>Clients satisfaits</p>
-      <p><span class="nb-clients">2500</span>Clients satisfaits</p>
-      <p><span class="nb-clients">2500</span>Clients satisfaits</p>
-    </div>
-
+    <section><!--bandeau satisfaction client-->
+      <div class="bandeau-satisfaction-clients" id="temoignages">
+        <p><span class="nb-clients">2500</span>Clients satisfaits</p>
+        <p><span class="nb-clients">2500</span>Clients satisfaits</p>
+        <p><span class="nb-clients">2500</span>Clients satisfaits</p>
+        <p><span class="nb-clients">2500</span>Clients satisfaits</p>
+      </div>
+    </section><!--conteneur des services proposés à relier ultérieurement avec création de la page Nos services (voir maquette créée)-->
     <section id="conteneur-nos-services">
       <h2 id="services">Nos services</h2>
       <div class="conteneur-services">
@@ -95,29 +98,29 @@
         </div>
       </div>
     </section>
-    <section id="newsList">
+    <section id="newsList"><!--Affichage des 3 derniers articles (gérer en javascript)-->
       <h2>Dernières Actualités</h2>
       <div class="conteneurActualites">
       </div>
-      <script src="js/articles.js" defer></script>
-      <script src="js/script.js" defer></script>
+      <script src="js/articles.js" defer></script><!--lien vers articles.js (CRUD) pour la récupération et l'affichage des articles -->
+      <script src="js/script.js" defer></script><!--lien pour l'opération de calcul afficher uniquement 3 derniers articles-->
     </section>
-    <section id="conteneur-contactez-nous">
+    <section id="conteneur-contactez-nous"><!--conteneur contenant le formulaire de contact--> 
       <div class="conteneur-contact">
         <h2 id="contact">Contactez-nous</h2>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Donec sed leo in.</p>
-        <form class="formContact">
+        <form class="formContact"><!--formulaire de contact pas de label car placehover inclus dans input -->
           <div class="success" id="successMsg">
           </div>
-          <div class="nom-categ">
+          <div class="nom-categ"><!--div pour ligne 1 du formulaire-->
             <input type="text" id="nom" name="nom" placeholder="Nom" required>
             <input type="text" id="categorie" name="categorie" placeholder="Catégorie" required>
           </div>
-          <div class="tel-ville">
+          <div class="tel-ville"><!--div pour ligne 2 du formulaire-->
             <input type="tel" id="telephone" name="telephone" placeholder="Téléphone" required>
             <input type="text" id="ville" name="ville" placeholder="Ville" required>
           </div>
-          <div class="email-message">
+          <div class="email-message"><!--div pour ligne 3 et 4 du formulaire avec textaera pour la partie message pouvant contenir 5 lignes-->
             <input type="email" id="email" name="email" placeholder="E-mail" required>
             <textarea id="message" name="message" rows="5" placeholder="Message" required></textarea>
           </div>
