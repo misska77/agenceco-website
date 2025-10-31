@@ -115,7 +115,7 @@
         <h2 id="contact">Contactez-nous</h2>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Donec sed leo in.</p>
         <form class="formContact"><!--formulaire de contact pas de label car placehover inclus dans input -->
-          <div class="success" id="successMsg">
+          <div class="error" id="errorMsg"><!--div pour afficher un messgae d'erreur-->
           </div>
           <div class="nom-categ"><!--div pour ligne 1 du formulaire-->
             <input type="text" id="nom" name="nom" placeholder="Nom" required>
@@ -129,8 +129,6 @@
             <!--div pour ligne 3 et 4 du formulaire avec textaera pour la partie message pouvant contenir 5 lignes-->
             <input type="email" id="email" name="email" placeholder="E-mail" required>
             <textarea id="message" name="message" rows="5" placeholder="Message" required></textarea>
-          </div>
-          <div class="error" id="errorMsg"> 
           </div>
           <div class="bouton-envoyer">
             <button type="submit" id="bouton-envoyer">Envoyer</button>

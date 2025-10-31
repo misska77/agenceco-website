@@ -104,6 +104,10 @@
   font-weight: 700;
 }
 
+#errorMsg {
+color: white;
+}
+
 .conteneur-contact {
   display: flex;
   flex-direction: column;
@@ -176,12 +180,6 @@ textarea {
 }
 
 .email-message textarea {
-  font-size: 20px;
-}
-
-.success,
-.error {
-  color: white;
   font-size: 20px;
 }
 
