@@ -1,6 +1,7 @@
-document.addEventListener("DOMContentLoaded", async () => {//quand le html de la page a fini de se charger, execute la fonction
+//quand le html de la page a fini de se charger, execute la fonction
+document.addEventListener("DOMContentLoaded", async () => {
   const id = getUrlParam("id");// appelle la fonction qui récupère un paramètre URL ici l'ID de l'article
-  if (!id) {//condition qui verifie si il n'y a pad d'id
+  if (!id) {//condition qui verifie si il n'y a pas d'id
     alert("Pas d'identifiant d'article");// et renvoi une alerte si c'est le cas
     window.location.href = "blog.html";// redirige vers la page blog.html
     return;//stoppe le reste du code
