@@ -17,6 +17,8 @@ function afficherArticles(listeArticles, options = {}) {//creation de la fonctio
   const divConteneur = document.querySelector('.conteneurActualites'); //récuperation conteneur actualités
   const user = JSON.parse(localStorage.getItem("user")); //recuperation du user dans le local storage
 
+  divConteneur.innerHTML = ""
+
   listeArticles.forEach(article => {//pour chaque article de la liste des articles
     const lien = document.createElement('a');//cree un lien qui servira pour la page détail
     lien.href = `detail.html?id=${article.id}`;//le lien sera un id
@@ -41,7 +43,7 @@ function afficherArticles(listeArticles, options = {}) {//creation de la fonctio
     footer.appendChild(date);//on rattache la date au footer du bloc
 
     // Si utilisateur est connecté on cree les boutons ajouter modifier et supprimer sur la page blog.html
-    if (user) {
+    if (user && options.afficherBoutons) {
       const btnEdit = document.createElement("button");
       btnEdit.textContent = "Modifier";
       btnEdit.classList.add("btn-edit");
