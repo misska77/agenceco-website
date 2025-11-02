@@ -1,5 +1,4 @@
 //slide galerie
-console.log("main")
 //recuperation des 2 boutons chevron
 const prev = document.getElementById('prev');
 const next = document.getElementById('next');
