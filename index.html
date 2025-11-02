@@ -26,25 +26,27 @@
 
 <body>
   <header>
-    <nav class="navbar" id="start"><!--Navbar-->
+    <nav class="navbar">
       <div class="logo-toggle">
         <h1>Agenc<span class="eco">eco</span></h1>
         <div class="toggle">
           <i class="fa-solid fa-bars"></i>
         </div>
       </div>
-      <div class="nav-links hidden active">
+
+      <div class="nav-links">
         <a href="#start">Accueil</a>
         <a href="#notre-equipe">Notre équipe</a>
-        <a href="#services">Nos services</a>
+        <a href="#nos-services">Nos services</a>
         <a href="#temoignages">Témoignages</a>
         <a href="#contact">Contactez nous</a>
         <a href="#newsList">Actualités</a>
       </div>
     </nav>
+
   </header>
   <main>
-    <section><!--conteneur image background accueil-->
+    <section id="start"><!--conteneur image background accueil-->
       <div class="titre-conteneur">
         <div class="titre">
           <span class="bienvenue">Bienvenue dans votre</span><br>
@@ -53,9 +55,9 @@
         <img src="resources/rodion-kutsaev-049M_crau5k-unsplash 1.jpg" alt="backgroud-feuilles"
           class="image-background">
       </div>
-    </section><!--conteneur notre équipe-->
-    <section id="Conteneur-notre-equipe">
-      <h2 id="notre-equipe">Notre équipe</h2>
+    </section>
+    <section id="notre-equipe"><!--conteneur notre équipe-->
+      <h2>Notre équipe</h2>
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Donec sed leo in nisi vehicula bidendum. Aliquam
         sit amet blandit nisi, sodales molestie.
       </p>
@@ -77,8 +79,8 @@
         </div>
       </div>
     </section>
-    <section><!--bandeau satisfaction client-->
-      <div class="bandeau-satisfaction-clients" id="temoignages">
+    <section id="temoignages"><!--bandeau satisfaction client-->
+      <div class="bandeau-satisfaction-clients">
         <p><span class="nb-clients">2500</span>Clients satisfaits</p>
         <p><span class="nb-clients">2500</span>Clients satisfaits</p>
         <p><span class="nb-clients">2500</span>Clients satisfaits</p>
@@ -86,7 +88,7 @@
       </div>
     </section>
     <!--conteneur des services proposés à relier ultérieurement à la page Nos services (voir maquette créée)-->
-    <section id="conteneur-nos-services">
+    <section id="nos-services">
       <h2 id="services">Nos services</h2>
       <div class="conteneur-services">
         <div class="box-services">
@@ -113,9 +115,9 @@
         });
       </script>
     </section>
-    <section id="conteneur-contactez-nous"><!--conteneur contenant le formulaire de contact-->
+    <section id="contact"><!--conteneur contenant le formulaire de contact-->
       <div class="conteneur-contact">
-        <h2 id="contact">Contactez-nous</h2>
+        <h2>Contactez-nous</h2>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Donec sed leo in.</p>
         <form class="formContact"><!--formulaire de contact pas de label car placehover inclus dans input -->
           <div class="error" id="errorMsg"><!--div pour afficher un messgae d'erreur-->
@@ -192,7 +194,6 @@
             <button id="next">&#10095;</button>
           </div>
         </div>
-
     </section>
   </main>
   <footer><!--Pied de page en 2 blocs un bloc rubriques et un bloc Copyright-->

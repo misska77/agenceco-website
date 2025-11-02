@@ -21,22 +21,16 @@ body {
 }
 
 .navbar {
-  position: relative;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 100%;
+  height: 100px;
   background-color: white;
-}
-
-.logo-toggle {
   padding: 0 15px;
 }
 
-h1 {
+.logo-toggle h1 {
   color: #255919;
   font-size: 43px;
   font-weight: 700;
@@ -49,20 +43,20 @@ h1 {
 .toggle {
   font-size: 30px;
   color: #255919;
-  display: none;
+  display: none; /* caché en desktop */
 }
 
 .nav-links {
   display: flex;
   justify-content: end;
   gap: 18px;
-  padding-right: 15px;
 }
 
 .nav-links a {
   color: #000;
   font-weight: 500;
   font-size: 20px;
+  text-decoration: none;
 }
 
 .titre-conteneur {
@@ -243,54 +237,43 @@ footer {
 @media screen and (max-width: 1088px) {
 
   .toggle {
-    display: block;
+    display: block; /* bouton burger visible */
   }
 
   .navbar {
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 50px;
-  }
-
-  h1 {
-    font-size: 30px;
-  }
-
-  .logo-toggle {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    z-index: 20;
-  }
-
-  .nav-links.is-visible {
-    display: block;
+    align-items: flex-start;
+    height: auto;
+    padding: 10px 15px;
   }
 
   .nav-links {
-    position: absolute;
+    display: none; /* menu caché par défaut */
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    z-index: 10;
-    background-color: white;
     width: 100%;
-    height: 100vh;
+    height: 100vh; /* plein écran */
+    position: fixed;
     top: 0;
-    gap: 50px;
-    margin-top: 30px;
+    left: 0;
+    background-color: white;
+    gap: 40px; /* espacement entre les liens */
+    padding: 0;
+    z-index: 1000;
   }
 
-  .hidden {
-    display: none;
+  .nav-links.is-visible {
+    display: flex; /* menu visible */
   }
 
-  .nav-links a {
-    font-size: 30px;
-    font-weight: 600;
+  .logo-toggle {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    z-index: 1100;
   }
 
   h2 {
@@ -330,7 +313,7 @@ footer {
   }
 
   .telephone-location p {
-    width: 74%;
+    width: 60%;
   }
 
   .background-copyright {

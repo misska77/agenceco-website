@@ -115,6 +115,11 @@
   padding-top: 30px;
 }
 
+.conteneur-contact h2 {
+  background-color: #183a43;
+  color: #c8ff00;
+}
+
 .conteneur-contact p {
   background-color: #183a43;
   color: white;
