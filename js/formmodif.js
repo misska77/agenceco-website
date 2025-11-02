@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   //récuperation et écoute du formulaire par une action submit(bouton modifier pour soumission)
   document.getElementById("formModifArticle").addEventListener("submit", async (event) => {
     event.preventDefault();//empêche le comportement par défaut (raffraichissement de la page après soumission)
-  //on récupère les valeurs de tous le champs du formulaire
+    //on récupère les valeurs de tous le champs du formulaire
     const id = document.getElementById("id").value;
     const titre = document.getElementById("title").value.trim();
     const description = document.getElementById("description").value.trim();

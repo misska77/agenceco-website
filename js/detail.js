@@ -29,7 +29,7 @@ if (id) {// si id présent on charge l'article depuis l'API
             <p>${escapeHTML(article.content)}<p>
           `
     })
-//mécanisme de gestion d'erreur - si une erreur survient retour message d'erreur
+    //mécanisme de gestion d'erreur - si une erreur survient retour message d'erreur
     .catch(err => {
       console.error(err);
       document.getElementById("detail-conteneur").textContent = "Erreur : impossible de charger l'article.";

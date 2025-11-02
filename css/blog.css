@@ -158,12 +158,12 @@
     display: none;
   }
 
-.actions button,
-.article-footer button {
-  width: 47%;
-  height: 29px;
-  font-size: 17px;
-}
+  .actions button,
+  .article-footer button {
+    width: 47%;
+    height: 29px;
+    font-size: 17px;
+  }
 
   .actions {
     width: 100%;

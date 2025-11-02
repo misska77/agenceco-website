@@ -8,16 +8,16 @@ let slide = 0 // on cree une variable qui dit que le début de l'animation part 
 
 prev.addEventListener('click', () => {   // On écoute le bouton "précedent" au clic 
   slide = slide - 1 // slide -1 pour revenir sur la slide précedente
-  if (slide<0){
-    slide=2
+  if (slide < 0) {
+    slide = 2
   }
   changeSlide(); //on appelle la fonction changer la slide en décalant l'image de -100
 })
 
 next.addEventListener('click', () => {   // On écoute le bouton "suivant" au clic
   slide = slide + 1  // slide + 1  pour passer à la slide suivante
-  if (slide>2){
-    slide=0
+  if (slide > 2) {
+    slide = 0
   }
   changeSlide(); //on appelle la fonction changer la slide en décalant l'image de +100
 })

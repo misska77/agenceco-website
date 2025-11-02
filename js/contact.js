@@ -59,25 +59,25 @@ form.addEventListener("submit", (event) => {
     errorMsg.textContent = " Le numero doit contenir 10 chiffres"
     toutValide = false;//et ToutValide = faux
 
-      setTimeout(() => {//le message d'alerte s'efface au bout de 3 secondes
-    errorMsg.textContent = "";
-  }, 3000);
-}
+    setTimeout(() => {//le message d'alerte s'efface au bout de 3 secondes
+      errorMsg.textContent = "";
+    }, 3000);
+  }
 
   if (!verifierEmail()) {// si baliseEmail est incorrecte retourne une alerte
     errorMsg.textContent = "l'adresse mail est incorrecte"
     toutValide = false;//et ToutValide = faux
 
-      setTimeout(() => {//le message d'alerte s'efface au bout de 3 secondes
-    errorMsg.textContent = "";
-  }, 3000);
-}
+    setTimeout(() => {//le message d'alerte s'efface au bout de 3 secondes
+      errorMsg.textContent = "";
+    }, 3000);
+  }
 
 
   else {
     errorMsg.textContent = "Formulaire transmis avec succès"
     setTimeout(() => {//le message d'alerte s'efface au bout de 3 secondes
-    errorMsg.textContent = "";
+      errorMsg.textContent = "";
     }, 3000);
 
     form.reset()// reset du formulaire envoyé avec succès donc toutValide est vrai
